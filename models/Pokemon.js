@@ -14,14 +14,6 @@ Pokemon.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    supertype: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    subtypes: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
     level: {
       type: DataTypes.INTEGER,
       allowNull: true,
@@ -34,14 +26,6 @@ Pokemon.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    evolvesFrom: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    abilities: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
     attacks: {
       type: DataTypes.STRING,
       allowNull: true,
@@ -50,27 +34,19 @@ Pokemon.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    retreatCost: {
+    resistances: {
       type: DataTypes.STRING,
-      allowNull: true,
-    },
-    number: {
-      type: DataTypes.INTEGER,
       allowNull: true,
     },
     convertedRetreatCost: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    artist: {
+    set: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    images: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    flavorText: {
+    artist: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -82,15 +58,10 @@ Pokemon.init(
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    legalities: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-    },
-    wishList: {
-      type: DataTypes.BOOLEAN,
+    images: {
+      type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: false,
-    }
+    },
   },
   {
     sequelize,
