@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, INTEGER } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Pokemon extends Model {}
@@ -9,20 +9,55 @@ Pokemon.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
     },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    type: {
+    level: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    hp: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    types: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    notes: {
-      type: DataTypes.STRING(1000),
+    evolvesFrom: {
+      type: DataTypes.STRING,
       allowNull: true,
     },
+    abilities: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    attacks: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    weaknesses: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    convertedRetreatCost: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    flavorText: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    rarity: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    }
   },
   {
     sequelize,
