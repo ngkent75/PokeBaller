@@ -14,9 +14,17 @@ Pokemon.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    supertype: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    subtypes: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     level: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     hp: {
       type: DataTypes.INTEGER,
@@ -24,7 +32,7 @@ Pokemon.init(
     },
     types: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     evolvesFrom: {
       type: DataTypes.STRING,
@@ -36,17 +44,29 @@ Pokemon.init(
     },
     attacks: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     weaknesses: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
+    },
+    retreatCost: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    number: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
     },
     convertedRetreatCost: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
-    image: {
+    artist: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    images: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -56,7 +76,15 @@ Pokemon.init(
     },
     rarity: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
+    },
+    nationalPokedexNumbers: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    legalities: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
     },
     wishList: {
       type: DataTypes.BOOLEAN,
