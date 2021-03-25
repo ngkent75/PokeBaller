@@ -57,6 +57,11 @@ Pokemon.init(
     rarity: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    wishList: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
     }
   },
   {
