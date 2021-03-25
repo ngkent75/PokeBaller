@@ -1,26 +1,14 @@
 const { Pokemon } = require('../models');
+import pokemon from 'pokemontcgsdk'
+
+pokemon.configure({ apiKey: '80be9899-d5a3-48b0-bced-3f2974372f12' })
 
 const pokemonData = [
-  {
-    name: 'April 20, 2021 07:00:00',
-    type: 'June 21, 2021 17:00:00',
-    notes: 'June 21, 2021 17:00:00',
-  },
-  {
-    name: 'Sommer',
-    starting_date: 'June 22, 2021 09:00:00',
-    ending_date: 'September 22, 2021 22:00:00',
-  },
-  {
-    name: 'Herfst',
-    starting_date: 'September 23, 2021 08:30:00',
-    ending_date: 'December 21, 2021 20:30:00',
-  },
-  {
-    name: 'Invierno',
-    starting_date: 'December 22, 2020 11:00:00',
-    ending_date: 'March 19, 2021 19:00:00',
-  },
+  pokemon.card.all()
+    .then((cards) => {
+      for (let i = 0; i < 2; i++)
+        console.log(cards[i]) // "Blastoise"
+    })
 ];
 
 const seedPokemon = () => Pokemon.bulkCreate(pokemonData);

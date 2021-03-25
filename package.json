@@ -1,5 +1,5 @@
 {
-  "name": "PokeBaller",
+  "name": "pokeballer",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -35,7 +35,6 @@
     "sequelize": "^6.6.2"
   },
   "devDependencies": {
-    "eslint": "^7.22.0",
     "nodemon": "^2.0.7"
   },
   "type": "module"
