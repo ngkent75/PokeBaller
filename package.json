@@ -1,5 +1,5 @@
 {
-  "name": "PokeBaller",
+  "name": "pokeballer",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -31,10 +31,10 @@
     "express-handlebars": "^5.2.1",
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
+    "pokemontcgsdk": "^2.0.0",
     "sequelize": "^6.6.2"
   },
   "devDependencies": {
-    "eslint": "^7.22.0",
     "nodemon": "^2.0.7"
   }
 }
