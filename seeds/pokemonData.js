@@ -11,8 +11,6 @@ const pokemonName = 'Beedrill';
 //         console.log(cards) // "Beedrill"
 // });
 
-
-
 pokemon.card.all({ q: `name:${pokemonName}` })
     .then((cards) => {
         console.log(cards.map(card => {
