@@ -1,4 +1,4 @@
-const { Model, DataTypes, INTEGER } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Pokemon extends Model {}
@@ -61,6 +61,14 @@ Pokemon.init(
     images: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    collection_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'collection',
+        key: 'id',
+      }
     },
   },
   {
