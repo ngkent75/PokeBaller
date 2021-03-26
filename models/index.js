@@ -1,13 +1,23 @@
 const Pokemon = require('./Pokemon');
-const Collection = require('./Collection');
 const User = require('./User');
 
-User.hasOne(Collection);
+User.hasMany(Pokemon);
 
-Collection.belongsTo(User, { foreignKey: 'user_id' });
+Pokemon.belongsToMany(User, { foreignKey: 'user_id' });
 
-Collection.hasMany(Pokemon, { foreignKey: 'collection_id' });
+module.exports = { Pokemon, User };
 
-Pokemon.belongsTo(Collection, { foreignKey: 'collection_id' });
 
-module.exports = { Pokemon, Collection, User };
+/*
+
+User hasOne Collection
+
+Collection has many Pokemon
+
+
+Should we have a System User that has all Pokemon?
+
+
+
+
+*/

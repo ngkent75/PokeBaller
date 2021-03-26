@@ -30,6 +30,14 @@ User.init(
           len: [6],
         },
       },
+      pokemon_card_ids: {
+        type:DataTypes.ARRAY,
+        allowNull:true,
+        references: {
+          model:'pokemon',
+          key:'id'
+        }
+      }
   },
   {
     sequelize,
