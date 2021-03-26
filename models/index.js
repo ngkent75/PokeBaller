@@ -1,11 +1,13 @@
 const Pokemon = require('./Pokemon');
 const User = require('./User');
+const PokemonUser = require('./PokemonUser');
 
-User.hasMany(Pokemon);
+Pokemon.belongsToMany(User, { through: PokemonUser, foreignKey: 'pokemon_id' });
 
-Pokemon.belongsToMany(User, { foreignKey: 'user_id' });
+User.belongsToMany(Pokemon, { through: PokemonUser, foreignKey: 'user_id' });
 
-module.exports = { Pokemon, User };
+
+module.exports = { Pokemon, User, PokemonUser };
 
 
 /*
