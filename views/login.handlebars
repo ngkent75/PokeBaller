@@ -1,6 +1,43 @@
-<header>
-        <div class="container-fluid d-flex flex-row justify-content-center" id="login-header">
-        <h1 id="login-logo"> <span id= "poke-red">Poke</span>Baller</h1>
-        <img src="../public/images/pokeball.png" alt="pokeball" />
+<div class="container-fluid d-flex flex-row justify-content-center" id="login-header">
+        <h1 id="login-logo"> <span id="poke-red">Poke</span>Baller</h1>
+        <img src="public/images/pokeball.png" alt="pokeball" />
     </div>
-</header>
+
+    <div class="row justify-content-center">
+        <div class="col-md-3 border border-4">
+          <h2>Login</h2>
+          <form class="form login-form">
+            <div class="form-group">
+              <label for="email-login">email:</label>
+            </div>
+              <input class="form-input" type="text" id="email-login" />
+            <div class="form-group">
+              <label for="password-login">password:</label>
+            </div>
+              <input class="form-input" type="password" id="password-login" />
+            <div class="form-group">
+              <button class="btn btn-primary" type="submit">login</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-3 border border-4">
+          <h2>Signup</h2>
+          <form class="form signup-form">
+            <div class="form-group">
+              <label for="name-signup">name:</label>
+            </div>
+              <input class="form-input" type="text" id="name-signup" />
+            <div class="form-group">
+              <label for="email-signup">email:</label>
+            </div>
+              <input class="form-input" type="text" id="email-signup" />
+            <div class="form-group">
+              <label for="password-signup">password:</label>
+            </div>
+              <input class="form-input" type="password" id="password-signup" />
+            <div class="form-group">
+              <button class="btn btn-primary" type="submit">signup</button>
+            </div>
+          </form>
+        </div>
+      </div>
