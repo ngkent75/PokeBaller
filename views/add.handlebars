@@ -1,0 +1,24 @@
+<div class="container-fluid d-flex flex-row justify-content-center" id="login-header">
+    <h1 id="login-logo"> <span class="poke-red">Poke</span>Baller</h1>
+    <img src="public/images/pokeball.png" alt="pokeball" />
+</div>
+
+
+<div class="row justify-content-center">
+    <div class="col-3">
+        <h2 id="add-crd" class="text-center">Add Cards</h2>
+        <form id="add-form" class="input-card text-center">
+            <input id="search-card" list="card-list" name="crd">
+            <datalist id="crd-list">
+            </datalist>
+            <input id="BtnCard" type="button" value="Submit">
+            <!-- Modal body -->
+            <div class="modal" id="alert-modal">
+                <h2>Warning</h2>
+                <p>Card not Found</p>
+                <!-- Keep onclick attribute on modal -->
+                <button class="close">close</button>
+            </div>
+        </form>
+    </div>
+</div>

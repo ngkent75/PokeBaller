@@ -7,6 +7,10 @@
 
 /* LOGIN/SIGNUP PAGE STYLES */
 
+.container{
+    max-width: 1000px;
+}
+
 #login-header {
     border-bottom-style: solid;
     border-bottom-width: thick;
@@ -20,6 +24,32 @@
     transform: rotate(-5deg);
 }
 
-#poke-red {
-    color: #ee1515;
+.poke-red {
+    color: #ca2b2b;
+}
+
+.header-two {
+    margin: 20px;
+}
+
+.card {
+    border: 2px black solid;
+    width: 200px;
+    height: 300px;
+    margin: 20px;
+    align-content: center;
+}
+
+#navbarDropdownMenuLink {
+    max-width: 200px;
+}
+
+#add-crd {
+    margin: 60px;
+}
+
+#add-form {
+    border: 2px black solid;
+    height: 320px;
+    
 }
