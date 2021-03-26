@@ -1,0 +1,25 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* LOGIN/SIGNUP PAGE STYLES */
+
+#login-header {
+    border-bottom-style: solid;
+    border-bottom-width: thick;
+    border-color: black;
+}
+
+#login-logo {
+    font-family: "Pokemon";
+    font-size: 100px;
+    margin-top: 40px;
+    transform: rotate(-5deg);
+}
+
+#poke-red {
+    color: #ee1515;
+}
