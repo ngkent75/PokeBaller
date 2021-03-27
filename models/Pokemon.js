@@ -20,7 +20,7 @@ Pokemon.init(
     },
     images: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
   },
   {
