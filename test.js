@@ -1,4 +1,4 @@
-const { Pokemon } = require('../models');
+const { Pokemon } = require('./models');
 const pokemon = require('pokemontcgsdk');
 const shuffle = require('lodash.shuffle');
 

@@ -1,4 +1,4 @@
-const router = require('experss').Router();
+const router = require('express').Router();
 const { User, Pokemon, PokemonUser } = require('../models');
 const withAuth = require('../utils/auth');
 
