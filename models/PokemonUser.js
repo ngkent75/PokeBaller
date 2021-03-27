@@ -6,17 +6,17 @@ class PokemonUser extends Model { }
 
 PokemonUser.init(
     {
-        pokemon_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'pokemon',
-                key: 'id',
-            },
-        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
+                key: 'id',
+            },
+        },
+        pokemon_id: {
+            type: DataTypes.STRING,
+            references: {
+                model: 'pokemon',
                 key: 'id',
             },
         },
@@ -29,5 +29,7 @@ PokemonUser.init(
         modelName: 'pokemon_user',
     }
 );
+
+
 
 module.exports = PokemonUser;

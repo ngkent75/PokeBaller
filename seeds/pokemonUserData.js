@@ -30,3 +30,7 @@ const pokemonUserData = [
         "pokemon_id": "sm12-1"
     }
 ]
+
+const seedPokemonUser = () => PokemonUser.bulkCreate(pokemonUserData);
+
+module.exports = seedPokemonUser;
