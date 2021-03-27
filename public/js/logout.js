@@ -1,5 +1,5 @@
-const logoutHandler = async () => {
-    const response = await fetch('/api/pokeUserRoutes/logout', {
+const logoutFormHandler = async () => {
+    const response = await fetch('/api/users/logout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
     });
@@ -7,8 +7,8 @@ const logoutHandler = async () => {
     if (response.ok) {
         document.location.replace('/');
     } else {
-        alert(response.statusText);
+        console.log(response.statusText);  //TODO 
     }
 };
 
-document.querySelector('.logout').addEventListener('click', logoutHandler);
+document.querySelector('.logout').addEventListener('click', logoutFormHandler);
