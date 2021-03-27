@@ -1,6 +1,7 @@
 const sequelize = require('../config/connection');
-const { User, PokemonUser } = require('../models');
 const seedUser = require('./userData.js');
+const seedPokemonUser = require('./pokemonUserData.js');
+const seedPokemon = require('./pokemonData.js');
 // const seedCollection = require('./collectionData.js')
 
 // const seedPokemon = require('./pokemon.js');
@@ -8,13 +9,11 @@ const seedUser = require('./userData.js');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  // await User.bulkCreate(userData, {
-  //   individualHooks: true,
-  //   returning: true,
-  // });
+  await seedPokemon();
   
   await seedUser();
-  // await seedPokemon();
+  
+  await seedPokemonUser();
 
   process.exit(0);
 };
