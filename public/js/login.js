@@ -16,14 +16,13 @@ const loginHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/collection');
         } else {
-            alert(response.statusText);
+            console.log(response.statusText); //TODO
         }
     }
 };
 
-
 // SIGNUP Function
-const signupHandler = async (event) => {
+const signupFormHandler = async (event) => {
     event.preventDefault();
 
     // Get values from signup form
@@ -41,10 +40,10 @@ const signupHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/collection');
         } else {
-            alert(response.statusText);
+            console.log(response.statusText); //TODO
         }
     }
 };
 
 document.querySelector('.login-form').addEventListener('submit', loginHandler);
-document.querySelector('.signup-form').addEventListener('submit', signupHandler);
+document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
