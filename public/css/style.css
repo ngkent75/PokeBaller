@@ -5,17 +5,13 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Hind', sans-serif;
+}
 /* LOGIN/SIGNUP PAGE STYLES */
 
 .container{
-    max-width: 1000px;
-}
-
-#login-logo {
-    font-family: "Pokemon";
-    font-size: 100px;
-    margin-top: 40px;
-    transform: rotate(-5deg);
+    max-width: 1250px;
 }
 
 .poke-red {
@@ -24,6 +20,7 @@
 
 .header-two {
     margin: 20px;
+    font-family: "Pokemon";
 }
 
 .card {
@@ -46,4 +43,21 @@
     border: 2px black solid;
     height: 320px;
     
+}
+
+.nav-link {
+    color: white;
+    font-size: 24px;
+}
+
+.logout {
+    color: #ca2b2b;
+}
+
+.nav-link:hover {
+    color: #ca2b2b;
+}
+
+.logout:hover {
+    color: white;
 }
