@@ -52,23 +52,32 @@ router.get('/pokemon/:id', async (req, res) => {
     });
 
 // for login
-router.get('/', (req, res) => {
-    if (req.session.logged_out) {
-        res.redirect('/login')
-    } else {
-        res.redirect('/homepage')
-    }
-});
-
-router.get('/login', (req, res) => {
-    res.render('login');
-    return;
-});
-
 router.get('/homepage', withAuth, (req, res) => {
     res.render('homepage');
     return;
 });
+router.get('/', withAuth, async (req, res) => {
+    try {
+      const userData = await User.findAll({
+        attributes: { exclude: ['password'] },
+        order: [['name', 'ASC']],
+      });
+      const users = userData.map((project) => project.get({ plain: true }));
+      res.render('homepage', {
+        users,
+        logged_in: req.session.logged_in,
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+  router.get('/login', (req, res) => {
+    if (req.session.logged_in) {
+      res.redirect('/homepage');
+      return;
+    }
+    res.render('homepage');
+  });
 
 
 
