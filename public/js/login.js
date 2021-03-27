@@ -7,14 +7,14 @@ const loginHandler = async (event) => {
     const password = document.querySelector('#password-login').nodeValue.trim();
 
     if (email && password) {
-        const response = await fetch('/api/pokeUserRoutes/login', { //might need to change route
+        const response = await fetch('/api/users/login', { //might need to change route
             method: 'POST',
             body: JSON.stringify({ email, password }),
             headers: { 'Content-Type': 'application/json' },
         });
         
         if (response.ok) {
-            document.location.replace('/collection');
+            document.location.replace('/homepage');
         } else {
             console.log(response.statusText); //TODO
         }
