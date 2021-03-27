@@ -1,5 +1,21 @@
 const router = require('express').Router();
-const { User } = require('../../models')
+const { Pokemon, User, PokemonUser } = require('../../models')
+
+// GET all users
+router.get('/', async (req, res) => {
+    try {
+        const userData = await User.findAll({
+            include: [
+                {
+                    model: Pokemon,
+                }
+            ]
+        });
+        res.status(200).json(userData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
 
 // used to create a new user
 router.post('/', async (req, res) => {
@@ -59,5 +75,5 @@ router.post('/logout', (req, res) => {
     }
 });
 
-module.exports  = router;
+module.exports = router;
 
