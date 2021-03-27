@@ -1,5 +1,5 @@
-const router = require('experss').Router();
-const { User, Pokemon, Collection } = require('../models');
+const router = require('express').Router();
+const { User, Pokemon, PokemonUser } = require('../models');
 const withAuth = require('../utils/auth');
 
 // // get all of the
@@ -14,24 +14,14 @@ const withAuth = require('../utils/auth');
 // get one collection
 router.get('/collection/:id', withAuth, async (req, res) => {
     try {
-        const dbPokemonData = await Collection.findByPk(req.params.id, {
+        const dbPokemonData = await Pokemon.findByPk(req.params.id, {
             include: [
                 {
                     model: Pokemon,
                     attributes: [
                         'id',
                         'name',
-                        'level',
-                        'hp',
-                        'types',
-                        'attacks',
-                        'weaknesses',
-                        'resistances',
-                        'convertedRetreatCost',
-                        'set',
-                        'artist',
                         'rarity',
-                        'nationalPokedexNumbers',
                         'images',
                         'collection_id',
                     ],
