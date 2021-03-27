@@ -20,27 +20,17 @@
 </head>
 
 <body>
-
     <div class="container-fluid" id="login-header">
         <div class="col-4">
             <img src="./public/images/pokeballer-logo-sm.png" alt="PokeBaller" />
         </div>
     </div>
+
     <nav class="navbar justify-content-end navbar-dark bg-dark">
         <!-- Navbar content -->
         <ul class="nav justify-content-end">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">HOME</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    COLLECTION
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="#">VIEW</a></li>
-                    <li><a class="dropdown-item" href="#">ADD</a></li>
-                </ul>
+                <a class="nav-link active" aria-current="page" href="#">VIEW</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active logout" href="#">LOGOUT</a>
@@ -48,25 +38,25 @@
         </ul>
     </nav>
 
-<div class="container">
-    <h2 class="header-two"> <span class="poke-red">Your</span> Collection:</h2>
-    <div class="d-flex flex-row justify-content-center">
-        <div class="col-4 card">Card1</div>
-        <div class="col-4 card">Card2</div>
-        <div class="col-4 card">Card3</div>
-        <div class="col-4 card">Card3</div>
-        <div class="col-4 card">Card3</div>
-    </div>
 
-    <h2 class="header-two"> <span class="poke-red">Popular</span> Cards:</h2>
-    <div class="d-flex flex-row justify-content-center">
-        <div class="col-4 card">Card1</div>
-        <div class="col-4 card">Card2</div>
-        <div class="col-4 card">Card3</div>
-        <div class="col-4 card">Card3</div>
-        <div class="col-4 card">Card3</div>
-    </div>
 
+<div class="row justify-content-center">
+    <div class="col-3">
+        <h2 id="add-crd" class="text-center">Add Cards</h2>
+        <form id="add-form" class="input-card text-center">
+            <input id="search-card" list="card-list" name="crd">
+            <datalist id="crd-list">
+            </datalist>
+            <input id="BtnCard" type="button" value="Submit">
+            <!-- Modal body -->
+            <div class="modal" id="alert-modal">
+                <h2>Warning</h2>
+                <p>Card not Found</p>
+                <!-- Keep onclick attribute on modal -->
+                <button class="close">close</button>
+            </div>
+        </form>
+    </div>
 </div>
 
     <script src="./public/script.js"></script>

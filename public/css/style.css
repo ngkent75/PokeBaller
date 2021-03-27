@@ -61,3 +61,7 @@ body {
 .logout:hover {
     color: white;
 }
+
+#search-card {
+    margin-top: 28px;
+}
