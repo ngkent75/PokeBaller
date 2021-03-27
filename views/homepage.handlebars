@@ -1,13 +1,38 @@
-<div class="container-fluid d-flex flex-row justify-content-center" id="login-header">
-    <h1 id="login-logo"> <span class="poke-red">Poke</span>Baller</h1>
-    <img src="public/images/pokeball.png" alt="pokeball" />
-</div>
+   <div class="container-fluid" id="login-header">
+        <div class="col-4">
+            <img src="../public/images/pokeballer-logo-sm.png" alt="PokeBaller" />
+        </div>
+    </div>
+    <nav class="navbar justify-content-end navbar-dark bg-dark">
+        <!-- Navbar content -->
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">HOME</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    COLLECTION
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">VIEW</a></li>
+                    <li><a class="dropdown-item" href="#">ADD</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">LOGOUT</a>
+            </li>
+        </ul>
+    </nav>
+
 <div class="container">
     <h2 class="header-two"> <span class="poke-red">Your</span> Collection:</h2>
     <div class="d-flex flex-row justify-content-center">
         <div class="col-4 card">Card1</div>
         <div class="col-4 card">Card2</div>
         <div class="col-4 card">Card3</div>
+        <div class="col-4 card">Card4</div>
+        <div class="col-4 card">Card5</div>
     </div>
 
     <h2 class="header-two"> <span class="poke-red">Popular</span> Cards:</h2>
@@ -15,6 +40,8 @@
         <div class="col-4 card">Card1</div>
         <div class="col-4 card">Card2</div>
         <div class="col-4 card">Card3</div>
+        <div class="col-4 card">Card4</div>
+        <div class="col-4 card">Card5</div>
     </div>
 
 </div>

@@ -8,22 +8,56 @@
     <title>PokeBaller</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-    </script>
+        </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
     <link rel="stylesheet" href="public/css/style.css">
     <link href="https://db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon" rel="stylesheet"
-        type="text/css" />
+        type="text/css"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
-    <div class="container-fluid d-flex flex-row justify-content-center" id="login-header">
-        <h1 id="login-logo"> <span class="poke-red">Poke</span>Baller</h1>
-        <img src="public/images/pokeball.png" alt="pokeball" />
+    <div class="container-fluid" id="login-header">
+        <div class="col-4">
+            <img src="./public/images/pokeballer-logo-sm.png" alt="PokeBaller" />
+        </div>
     </div>
-    
+
+    <nav class="navbar justify-content-end navbar-dark bg-dark">
+        <!-- Navbar content -->
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">VIEW</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active logout" href="#">LOGOUT</a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+<div class="row justify-content-center">
+    <div class="col-3">
+        <h2 id="add-crd" class="text-center">Add Cards</h2>
+        <form id="add-form" class="input-card text-center">
+            <input id="search-card" list="card-list" name="crd">
+            <datalist id="crd-list">
+            </datalist>
+            <input id="BtnCard" type="button" value="Submit">
+            <!-- Modal body -->
+            <div class="modal" id="alert-modal">
+                <h2>Warning</h2>
+                <p>Card not Found</p>
+                <!-- Keep onclick attribute on modal -->
+                <button class="close">close</button>
+            </div>
+        </form>
+    </div>
+</div>
 
     <script src="./public/script.js"></script>
 </body>
