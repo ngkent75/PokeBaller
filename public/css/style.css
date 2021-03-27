@@ -65,3 +65,12 @@ body {
 #search-card {
     margin-top: 28px;
 }
+
+.login-box {
+    margin: 60px 20px 20px 20px;
+}
+
+.signup-box {
+    margin: 60px 20px 20px 20px;
+
+}
