@@ -2,10 +2,10 @@ const router = require('express').Router();
 const { User, Pokemon, PokemonUser } = require('../models');
 const withAuth = require('../utils/auth');
 
-// // get all of the
+// get all of the
 // router.get('/', async (req, res) => {
 //     try {
-
+//         const data = await 
 //     } catch (err) {
 //         res.status(500).json(err);
 //     }
@@ -52,13 +52,24 @@ router.get('/pokemon/:id', async (req, res) => {
     });
 
 // for login
-router.get('/login', (req, res) => {
-    if (req.session.logged_in) {
-        res.redirect('/profile');
-        return;
+router.get('/', (req, res) => {
+    if (req.session.logged_out) {
+        res.redirect('/login')
+    } else {
+        res.redirect('/homepage')
     }
-    res.render('login');
 });
+
+router.get('/login', (req, res) => {
+    res.render('login');
+    return;
+});
+
+router.get('/homepage', withAuth, (req, res) => {
+    res.render('homepage');
+    return;
+});
+
 
 
 module.exports = router;
