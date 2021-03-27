@@ -1,15 +1,17 @@
 const router = require('express').Router();
-const { Pokemon, User, PokemonUser } = require('../../models')
+const {
+    Pokemon,
+    User,
+    PokemonUser
+} = require('../../models')
 
 // GET all users
 router.get('/', async (req, res) => {
     try {
         const userData = await User.findAll({
-            include: [
-                {
-                    model: Pokemon,
-                }
-            ]
+            include: [{
+                model: Pokemon,
+            }]
         });
         res.status(200).json(userData);
     } catch (err) {
@@ -20,13 +22,10 @@ router.get('/', async (req, res) => {
 // GET USER by ID
 router.get('/:id', async (req, res) => {
     try {
-        const userData = await User.findByPk( req.params.id, 
-            {
-            include: [
-                {
-                    model: Pokemon,
-                }
-            ]
+        const userData = await User.findByPk(req.params.id, {
+            include: [{
+                model: Pokemon,
+            }]
         });
         res.status(200).json(userData);
     } catch (err) {
@@ -66,14 +65,19 @@ router.post('/login', async (req, res) => {
         const validPassword = await dbUserData.checkPassword(req.body.password);
 
         if (!dbUserData || !validPassword) {
-            res.status(400).json({ message: 'Cannot find a user associated with that email/password, please try again' });
+            res.status(400).json({
+                message: 'Cannot find a user associated with that email/password, please try again'
+            });
             return;
         }
 
         req.session.save(() => {
             req.session.loggedIn = true;
 
-            res.status(200).json({ user: dbUserData, message: 'Successfully logged in!' });
+            res.status(200).json({
+                user: dbUserData,
+                message: 'Successfully logged in!'
+            });
         });
     } catch (err) {
         console.log(err);
@@ -81,10 +85,12 @@ router.post('/login', async (req, res) => {
     }
 });
 
-// used to logout
+
 router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {
+            req.logout(); // remove the req.user property and clear the login session
+            res.redirect('/login'); //redirect to login page
             res.status(204).end();
         });
     } else {
@@ -92,5 +98,5 @@ router.post('/logout', (req, res) => {
     }
 });
 
-module.exports = router;
 
+module.exports = router;
