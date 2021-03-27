@@ -11,12 +11,6 @@
     max-width: 1000px;
 }
 
-#login-header {
-    border-bottom-style: solid;
-    border-bottom-width: thick;
-    border-color: black;
-}
-
 #login-logo {
     font-family: "Pokemon";
     font-size: 100px;

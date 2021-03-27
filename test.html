@@ -8,22 +8,64 @@
     <title>PokeBaller</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-    </script>
+        </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
     <link rel="stylesheet" href="public/css/style.css">
     <link href="https://db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon" rel="stylesheet"
-        type="text/css" />
+        type="text/css"/>
 </head>
 
 <body>
 
     <div class="container-fluid d-flex flex-row justify-content-center" id="login-header">
-        <h1 id="login-logo"> <span class="poke-red">Poke</span>Baller</h1>
-        <img src="public/images/pokeball.png" alt="pokeball" />
+        <img src="./public/images/pokeballer-logo.png" alt="PokeBaller" />
     </div>
-    
+
+    <nav class="navbar justify-content-end navbar-dark bg-dark"></nav>
+
+    <div class="row justify-content-center">
+        <div class="col-md-3 border border-4">
+            <h2>Login</h2>
+            <form class="form login-form">
+                <div class="form-group">
+                    <label for="email-login">email:</label>
+                </div>
+                <input class="form-input" type="text" id="email-login" />
+                <div class="form-group">
+                    <label for="password-login">password:</label>
+                </div>
+                <input class="form-input" type="password" id="password-login" />
+                <div class="form-group">
+                    <button class="btn btn-primary" type="submit">login</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-3 border border-4">
+            <h2>Signup</h2>
+            <form class="form signup-form">
+                <div class="form-group">
+                    <label for="name-signup">name:</label>
+                </div>
+                <input class="form-input" type="text" id="name-signup" />
+                <div class="form-group">
+                    <label for="email-signup">email:</label>
+                </div>
+                <input class="form-input" type="text" id="email-signup" />
+                <div class="form-group">
+                    <label for="password-signup">password:</label>
+                </div>
+                <input class="form-input" type="password" id="password-signup" />
+                <div class="form-group">
+                    <button class="btn btn-primary" type="submit">signup</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
 
     <script src="./public/script.js"></script>
 </body>
