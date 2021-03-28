@@ -4,7 +4,7 @@ const shuffle = require('lodash.shuffle');
 
 pokemon.configure({ apiKey: '80be9899-d5a3-48b0-bced-3f2974372f12' })
 
-// const pokemonId = 'ex11-1';
+const pokemonId = 'xy11-1';
 // const pokemonName = 'Beedrill';
 // pokemon.card.all({ q: `id:${pokemonId}` })
 //     .then((cards) => {
@@ -24,6 +24,19 @@ pokemon.configure({ apiKey: '80be9899-d5a3-48b0-bced-3f2974372f12' })
         
 //     })
 
+pokemon.card.all({ q: `id:${pokemonId}` })
+    .then((cards) => {
+        console.table(cards.map(card => {
+          return {
+            name: card.name,
+            images: card.images.large,
+            rarity: card.rarity,
+            id: card.id,
+          }
+        })) 
+        
+    })
+
 // const page = Math.ceil(Math.random()*10);
 // console.log(page);
 // pokemon.card.where({ pageSize:5, page })
@@ -40,15 +53,15 @@ pokemon.configure({ apiKey: '80be9899-d5a3-48b0-bced-3f2974372f12' })
 //         }))
 // });
 
-const userData = User.findAll({
-  include: [
-      {
-          model: Pokemon,
-      }
-  ]
-});
+// const userData = User.findAll({
+//   include: [
+//       {
+//           model: Pokemon,
+//       }
+//   ]
+// });
 
-console.log(userData);
+// console.log(userData);
 
 
 // module.exports = seedPokemon;

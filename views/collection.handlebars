@@ -1,34 +1,33 @@
-    <div class="container-fluid" id="login-header">
-        <div class="col-4">
-            <img src="/images/pokeballer-logo-sm.png" alt="PokeBaller" />
-        </div>
+<div class="container-fluid" id="login-header">
+    <div class="col-4">
+        <img src="/images/pokeballer-logo-sm.png" alt="PokeBaller" />
     </div>
+</div>
 
-    <nav class="navbar justify-content-end navbar-dark bg-dark">
-        <!-- Navbar content -->
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">ADD</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active logout" href="#">LOGOUT</a>
-            </li>
-        </ul>
-    </nav>
+<nav class="navbar justify-content-end navbar-dark bg-dark">
+    <!-- Navbar content -->
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">ADD</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active logout" href="#">LOGOUT</a>
+        </li>
+    </ul>
+</nav>
 
-    <h2 class="header-two"> <span class="poke-red">Your</span> Collection:</h2>
-    <div class="d-flex flex-row justify-content-center">
-        <div class="col-4 card">Card1</div>
-        <div class="col-4 card">Card2</div>
-        <div class="col-4 card">Card3</div>
-        <div class="col-4 card">Card4</div>
-        <div class="col-4 card">Card5</div>
-    </div>
+<h2 class="header-two"> <span class="poke-red">Your</span> Collection:</h2>
+<section class="flex-row justify-center">
+    {{#each users}}
+    <section class="card">
+        <a href="/painting/{{id}}">
+            <header>{{title}}</header>
 
-    <div class="d-flex flex-row justify-content-center">
-        <div class="col-4 card">Card1</div>
-        <div class="col-4 card">Card2</div>
-        <div class="col-4 card">Card3</div>
-        <div class="col-4 card">Card4</div>
-        <div class="col-4 card">Card5</div>
-    </div>
+            <div class="card-body">
+                <img src="{{pokemons.images}}" alt="{{pokemons.name}}">
+                <p>By: {{artist}}</p>
+            </div>
+        </a>
+    </section>
+    {{/each}}
+</section>

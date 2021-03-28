@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
                 res.status(200).json(cards.map(card => {
                     return {
                         name: card.name,
-                        image: card.images.large,
+                        images: card.images.large,
                         rarity: card.rarity,
                         id: card.id,
                     }
@@ -29,7 +29,8 @@ router.get('/', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-})
+});
+
 
 const pokemonId = 'ex11-1';
 
