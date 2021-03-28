@@ -43,6 +43,7 @@ router.post('/', async (req, res) => {
         });
 
         req.session.save(() => {
+            req.session.user_id = dbUserData.id;
             req.session.loggedIn = true;
 
             res.status(200).json(dbUserData);
@@ -63,7 +64,8 @@ router.post('/login', async (req, res) => {
         });
 
         const validPassword = await dbUserData.checkPassword(req.body.password);
-
+        console.log(dbUserData);
+        console.log(validPassword);
         if (!dbUserData || !validPassword) {
             res.status(400).json({
                 message: 'Cannot find a user associated with that email/password, please try again'
@@ -72,6 +74,7 @@ router.post('/login', async (req, res) => {
         }
 
         req.session.save(() => {
+            req.session.user_id = dbUserData.id;
             req.session.loggedIn = true;
 
             res.status(200).json({
