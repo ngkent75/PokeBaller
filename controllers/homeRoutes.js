@@ -6,37 +6,10 @@ const {
 } = require('../models');
 const withAuth = require('../utils/auth');
 
-// get one collection
-router.get('/collection/:id', withAuth, async (req, res) => {
-  try {
-    const dbPokemonData = await Pokemon.findByPk(req.params.id, {
-      include: [{
-        model: Pokemon,
-        attributes: [
-          'id',
-          'name',
-          'rarity',
-          'images',
-          'collection_id',
-        ],
-      },],
-    });
-
-    const collection = dbPokemonData.get({
-      plain: true
-    });
-    res.render('collection', {
-      collection,
-      loggedIn: req.session.loggedIn
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+// ANYTHING WITH WITHAUTH WILL REDIRECT YOU TO LOGIN IF YOU AREN'T ALREADY LOGGED IN
 
 // get one card
-router.get('/pokemon/:id', async (req, res) => {
+router.get('/pokemon/:id', withAuth, async (req, res) => {
   try {
     const dbPokemonData = await Pokemon.findByPk(req.params.id);
 
@@ -54,25 +27,18 @@ router.get('/pokemon/:id', async (req, res) => {
   }
 });
 
-// for login
-// router.get('/homepage', withAuth, (req, res) => {
-//   res.render('homepage');
-//   return;
-// });
+
 
 router.get('/', withAuth, async (req, res) => {
   try {
-    // const userData = await User.findAll({
-    //   attributes: {
-    //     exclude: ['password']
-    //   },
-    //   order: [
-    //     ['name', 'ASC']
-    //   ],
-    // });
-    // const users = userData.map((project) => project.get({
-    //   plain: true
-    // }));
+    res.redirect('/homepage');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/homepage', withAuth, async (req, res) => {
+  try {
     res.render('homepage', {
       // users,
       logged_in: req.session.loggedIn,
@@ -83,10 +49,11 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect('/homepage');
     return;
   }
+
   res.render('login');
 });
 
