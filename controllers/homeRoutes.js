@@ -27,6 +27,24 @@ router.get('/pokemon/:id', withAuth, async (req, res) => {
   }
 });
 
+// GET USER by ID
+router.get('/users/:id', async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.params.id, {
+      include: [{
+        model: Pokemon,
+      }]
+    });
+    const userSerialize = JSON.parse(JSON.stringify(userData));
+    res.render('collection', {
+      userSerialize,
+      loggedIn: req.session.loggedIn
+    })
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
 
 
 router.get('/', withAuth, async (req, res) => {

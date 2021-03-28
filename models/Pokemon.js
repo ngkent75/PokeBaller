@@ -20,7 +20,7 @@ Pokemon.init(
     },
     images: {
       type: DataTypes.STRING,   //public\images\sample_card.png
-      defaultValue: 'public\images\sample_card.png', //is this right? make it relative to somewhere else?
+      // defaultValue: '/images/sample_card.png',
       allowNull: false,
     },
   },
