@@ -5,17 +5,6 @@ const {
   PokemonUser
 } = require('../models');
 const withAuth = require('../utils/auth');
-// const express = require('express');
-// const app = express();
-
-// get all of the
-// router.get('/', async (req, res) => {
-//     try {
-//         const data = await 
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
 
 // get one collection
 router.get('/collection/:id', withAuth, async (req, res) => {
@@ -30,7 +19,7 @@ router.get('/collection/:id', withAuth, async (req, res) => {
           'images',
           'collection_id',
         ],
-      }, ],
+      },],
     });
 
     const collection = dbPokemonData.get({
@@ -66,37 +55,39 @@ router.get('/pokemon/:id', async (req, res) => {
 });
 
 // for login
-router.get('/homepage', withAuth, (req, res) => {
-  res.render('homepage');
-  return;
-});
+// router.get('/homepage', withAuth, (req, res) => {
+//   res.render('homepage');
+//   return;
+// });
+
 router.get('/', withAuth, async (req, res) => {
   try {
-    const userData = await User.findAll({
-      attributes: {
-        exclude: ['password']
-      },
-      order: [
-        ['name', 'ASC']
-      ],
-    });
-    const users = userData.map((project) => project.get({
-      plain: true
-    }));
+    // const userData = await User.findAll({
+    //   attributes: {
+    //     exclude: ['password']
+    //   },
+    //   order: [
+    //     ['name', 'ASC']
+    //   ],
+    // });
+    // const users = userData.map((project) => project.get({
+    //   plain: true
+    // }));
     res.render('homepage', {
-      users,
-      logged_in: req.session.logged_in,
+      // users,
+      logged_in: req.session.loggedIn,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
 router.get('/login', (req, res) => {
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
     res.redirect('/homepage');
     return;
   }
-  res.render('homepage');
+  res.render('login');
 });
 
 

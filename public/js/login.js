@@ -3,20 +3,18 @@ const loginHandler = async (event) => {
     event.preventDefault();
 
     // Get values from login form
-    const email = document.querySelector('#email-login').nodeValue.trim();
-    const password = document.querySelector('#password-login').nodeValue.trim();
-
+    const email = document.querySelector('#email-login').value.trim();
+    const password = document.querySelector('#password-login').value.trim();
+    console.log(email, password);
     if (email && password) {
-        const response = await fetch('/api/users/login', { //might need to change route
+        const response = await fetch('/api/users/login', {
             method: 'POST',
             body: JSON.stringify({ email, password }),
             headers: { 'Content-Type': 'application/json' },
         });
         
         if (response.ok) {
-            document.location.replace('/homepage');
-        } else {
-            console.log(response.statusText); //TODO
+            document.location.replace('/');
         }
     }
 };
@@ -26,24 +24,24 @@ const signupFormHandler = async (event) => {
     event.preventDefault();
 
     // Get values from signup form
-    const name = document.querySelector('#name-signup').nodeValue.trim();
-    const email = document.querySelector('#email-login').nodeValue.trim();
-    const password = document.querySelector('#password-login').nodeValue.trim();
-
-    if (name && email && password) {
-        const response = await fetch('/api/pokeUserRoutes', { //might need to change route
+    const username = document.querySelector('#name-signup').value.trim();
+    const email = document.querySelector('#email-signup').value.trim();
+    const password = document.querySelector('#password-signup').value.trim();
+    console.log( username, email, password);
+    if (username && email && password) {
+        const response = await fetch('/api/users', {
             method: 'POST',
-            body: JSON.stringify({ name, email, password }),
+            body: JSON.stringify({ username, email, password }),
             headers: { 'Content-Type': 'application/json' },
         });
         
         if (response.ok) {
-            document.location.replace('/collection');
+            document.location.replace('/');
         } else {
-            console.log(response.statusText); //TODO
+            console.log(response.statusText);
         }
     }
 };
 
-document.querySelector('.login-form').addEventListener('LOGIN', loginHandler);
-document.querySelector('.signup-form').addEventListener('SIGNUP', signupFormHandler);
+document.querySelector('.login-form').addEventListener('submit', loginHandler);
+document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
