@@ -24,22 +24,16 @@
     </ul>
 </nav>
 
+<div>
+
+    <h2>Welcome to PokeBaller!</h2>
+    <p>Use PokeBaller to add and keep track of cards in your own personal digital collection.</p>
+    <p>Navigate to "add" to begin compiling cards to your collection.</p>
+    <p>To see your collection, navigate to "view."</p>
+
+</div>
+
 <div class="container">
-    <h2 class="header-two"> <span class="poke-red">Your</span> Collection:</h2>
-    <section class="row justify-center card-table">
-        {{#each this}}
-
-
-        <button onclick="add('{{id}}', '{{name}}', '{{rarity}}', '{{images}}')" class="card col-2">
-            <img src="{{images}}" class="img-responsive w-100" alt="{{name}}">
-            <div class="overlay">
-                <p class="rare-text">Rarity: {{rarity}}</p>
-            </div>
-        </button>
-
-
-        {{/each}}
-    </section>
 
     <h2 class="header-two"> <span class="poke-red">Suggested</span> Cards:</h2>
     <section class="row justify-center card-table">
@@ -58,6 +52,3 @@
     </section>
 
 </div>
-
-{{!--
-<script src="/js/search.js"></script> --}}
