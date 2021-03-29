@@ -49,9 +49,10 @@ body {
     margin: 20px;
     font-family: "Pokemon";
 }
+
 /* LOGIN/SIGNUP PAGE STYLES *****************************/
 
-.container{
+.container {
     max-width: 1250px;
 }
 
@@ -59,19 +60,54 @@ body {
 /* STYLING FOR EACH CARD DISPLAY ************************/
 .card {
     margin: 20px;
-    align-content: center;
+    /* align-content: center; */
     padding: 0;
     border: none;
     box-shadow: 0 0 20px rgb(14, 14, 14);
     transition: 1s;
-    display: inline;
-    max-width: 250px;
+    position: relative;
 }
 
 
 .card:hover {
-    transform:scale(1.1);
-    z-index: 2;
+    transform: scale(1.1);
+}
+
+/* Styling on hover */
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    transition: .5s ease;
+    background-color: transparent;
+    margin: auto;
+}
+
+.card:hover .overlay {
+    background-color: rgba(128, 128, 128, 0.7);
+}
+
+.rare-text {
+    color: transparent;
+    opacity: 1;
+    font-size: 20px;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    transition: .5s ease;
+}
+
+.card:hover .rare-text{
+    color: white;
 }
 
 .card-table {
@@ -107,17 +143,28 @@ body {
     text-shadow: 0px 0px 5px #ca2b2b;
 }
 
-/* ADD FORM STYLING **************************************/
-#add-form {
-    border: 2px black solid;
-    height: 320px;
-    
-}
-
 /* SEARCH FORM STYLING ***********************************/
 #search-card {
-    margin-top: 28px;
+    margin-top: 10%;
+    margin-bottom: 20%;
 }
+
+/* .sample-search {
+    width: 320px;GIT
+} */
+
+.search {
+    /* position: relative; */
+    bottom: 20px;
+    border: 6px solid black;
+    border-radius: 5px;
+    padding-top: 1%;
+    padding-bottom: 5%;
+    background: linear-gradient(red, darkred);
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
 
 
 /* LOGIN/SIGNUP FORM STYLING *****************************/

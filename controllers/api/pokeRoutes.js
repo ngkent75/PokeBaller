@@ -1,13 +1,11 @@
 const pokemon = require('pokemontcgsdk');
 pokemon.configure({ apiKey: '80be9899-d5a3-48b0-bced-3f2974372f12' });
-
+const shuffle=require('lodash.shuffle')
 const router = require('express').Router();
 const { Pokemon, User, PokemonUser } = require('../../models');
 
 
-
-
-
+//FIND ALL POKEMON BASED ON NAME
 router.get('/:pokename', async (req, res) => {
     try {
         // const pokemonName = 'Charizard';
@@ -31,8 +29,9 @@ router.get('/:pokename', async (req, res) => {
     }
 });
 
+//
 router.get('/pokemon/:id', async (req, res) => {
-    const pokemonId = 'ex14-1'
+    const pokemonId = 'ex14-1' //WHY IS THIS HARD CODED?????????
     // console.log(req.params.id);
     console.log(pokemonId);
     try {
@@ -58,6 +57,28 @@ router.get('/pokemon/:id', async (req, res) => {
 });
 
 
+router.get('/random/pokemon', async (req, res) => {
+    try {
+        const page = Math.ceil(Math.random()*10);
+        console.log(page);
+        pokemon.card.where({ pageSize:5, page })
+            .then((cards) => {
+                const randomData = shuffle(cards.data)
+                res.status(200).json(randomData.map(card => {
+                  return {
+                    name: card.name,
+                    images: card.images.large,
+                    rarity: card.rarity,
+                    id: card.id,
+                  }
+                }))
+        });
+        
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
 router.get('/local/:id', async (req, res) => {
     try {
         const localPokemonData = await Pokemon.findByPk(req.params.id);
@@ -68,14 +89,19 @@ router.get('/local/:id', async (req, res) => {
 });
 
 // post pokemon card
-router.post('/pokemon', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
-        const newPokemonData = await Pokemon.create(req.body);
+        const newPokemonData = await Pokemon.create({
+            ...req.body,
+            user_id: req.session.user_id
+        });
+
         res.status(200).json(newPokemonData);
     } catch (err) {
         res.status(500).json(err);
     }
 });
+
 
 
 

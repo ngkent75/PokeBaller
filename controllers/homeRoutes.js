@@ -1,15 +1,15 @@
 const pokemon = require('pokemontcgsdk');
 pokemon.configure({ apiKey: '80be9899-d5a3-48b0-bced-3f2974372f12' });
-
+const withAuth = require('../utils/auth');
 const router = require('express').Router();
+const shuffle = require('lodash.shuffle');
+
 const {
   User,
   Pokemon,
   PokemonUser
 } = require('../models');
-const withAuth = require('../utils/auth');
-const searchTerm = require('../')
-
+// const shuffle = require('lodash.shuffle');
 
 
 // ANYTHING WITH WITHAUTH WILL REDIRECT YOU TO LOGIN IF YOU AREN'T ALREADY LOGGED IN
@@ -98,16 +98,18 @@ router.get('/search/:pokemonName', async (req, res) => {
   }
 });
 
+//get random/suggested 5 pokemon cards
+// router.get('/homepage')
+
+
 // renders a blank page with add
 router.get('/add', async (req, res) => {
-  try{
-    res.render('add',{})
+  try {
+    res.render('add', {})
   } catch (err) {
     res.status(500).json(err);
   }
 })
-
-
 
 // redirects root to homepage if logged in, login page if logged out
 router.get('/', withAuth, async (req, res) => {
@@ -117,34 +119,49 @@ router.get('/', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-// renders homepage
+// // renders homepage with 5 random cards
+// router.get('/homepage', withAuth, async (req, res) => {
+//   try {
+//     const page = Math.ceil(Math.random() * 10);
+//     pokemon.card.where({ pageSize: 5, page })
+//       .then((cards) => {
+//         const randomData = shuffle(cards.data)
+//         const suggestedDataMap = randomData.map(card => {
+//           return {
+//             rname: card.name,
+//             rimages: card.images.large,
+//             rrarity: card.rarity,
+//             rid: card.id,
+//           }
+//         })
+//         const suggested = JSON.parse(JSON.stringify(suggestedDataMap));
+//         res.render('homepage', {
+//           ...suggested,
+//           logged_in: req.session.logged_in
+//         })
+//       });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+// renders homepage with 5 cards from user collection
 router.get('/homepage', withAuth, async (req, res) => {
   try {
-    res.render('homepage', {
-      // users,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-// shows collection based on user id
-router.get('/collection/:id', withAuth, async (req, res) => {
-  try {
-    const userData = await User.findByPk(req.params.id, {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
       include: [{ model: Pokemon }],
     });
-    const user = userData.get({ plain: true });
-
+    const user = JSON.parse(JSON.stringify(userData));
     res.render('collection', {
       ...user,
-      logged_in: req.session.logged_in
+      logged_in: true
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
 // renders login
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
@@ -154,6 +171,7 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
 
 
 module.exports = router;
