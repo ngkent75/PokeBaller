@@ -5,8 +5,10 @@
     document.location.replace(`/search/${searchInput}`)
     
     // return
-console.log(searchInput);
+// console.log(searchInput);
 } 
+
+//post pokemon to DB on add
 const add = async (id,name,rarity,images) => {
     console.log(id);
     console.log(name);
@@ -19,6 +21,16 @@ const add = async (id,name,rarity,images) => {
            'Content-Type': 'application/json'
         }
     });
+    console.log(id);
+    //post pokeUser 
+    const data = {pokemon_id:id};
+    const userResponse = await fetch(`/api/pokeUserRoutes`, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json'
+         }
+    })
     // if (response.ok) {
     //     document.location.replace(`/search/${searchInput}`);
 

@@ -1,13 +1,11 @@
 const pokemon = require('pokemontcgsdk');
 pokemon.configure({ apiKey: '80be9899-d5a3-48b0-bced-3f2974372f12' });
-
+const shuffle=require('lodash.shuffle')
 const router = require('express').Router();
 const { Pokemon, User, PokemonUser } = require('../../models');
 
 
-
-
-
+//FIND ALL POKEMON BASED ON NAME
 router.get('/:pokename', async (req, res) => {
     try {
         // const pokemonName = 'Charizard';
@@ -31,8 +29,9 @@ router.get('/:pokename', async (req, res) => {
     }
 });
 
+//
 router.get('/pokemon/:id', async (req, res) => {
-    const pokemonId = 'ex14-1'
+    const pokemonId = 'ex14-1' //WHY IS THIS HARD CODED?????????
     // console.log(req.params.id);
     console.log(pokemonId);
     try {
@@ -80,6 +79,7 @@ router.post('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
 
 
 

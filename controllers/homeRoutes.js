@@ -8,8 +8,8 @@ const {
   PokemonUser
 } = require('../models');
 const withAuth = require('../utils/auth');
-const searchTerm = require('../')
-
+const searchTerm = require('../');
+// const shuffle = require('lodash.shuffle');
 
 
 // ANYTHING WITH WITHAUTH WILL REDIRECT YOU TO LOGIN IF YOU AREN'T ALREADY LOGGED IN
@@ -107,8 +107,6 @@ router.get('/add', async (req, res) => {
   }
 })
 
-
-
 // redirects root to homepage if logged in, login page if logged out
 router.get('/', withAuth, async (req, res) => {
   try {
@@ -155,5 +153,20 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-
+// //get random/suggested 5 pokemon cards
+// const page = Math.ceil(Math.random()*10);
+// console.log(page);
+// pokemon.card.where({ pageSize:5, page })
+//     .then((cards) => {
+//         const randomData = shuffle(cards.data)
+//         console.log(randomData.map(card => {
+//           return {
+//             name: card.name,
+//             image: card.images.large,
+//             rarity: card.rarity,
+//             id: card.id,
+//             // price: card.tcgplayer.prices.holofoil.market
+//           }
+//         }))
+// });
 module.exports = router;
