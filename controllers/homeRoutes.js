@@ -119,48 +119,48 @@ router.get('/', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-// // renders homepage with 5 random cards
-// router.get('/homepage', withAuth, async (req, res) => {
-//   try {
-//     const page = Math.ceil(Math.random() * 10);
-//     pokemon.card.where({ pageSize: 5, page })
-//       .then((cards) => {
-//         const randomData = shuffle(cards.data)
-//         const suggestedDataMap = randomData.map(card => {
-//           return {
-//             rname: card.name,
-//             rimages: card.images.large,
-//             rrarity: card.rarity,
-//             rid: card.id,
-//           }
-//         })
-//         const suggested = JSON.parse(JSON.stringify(suggestedDataMap));
-//         res.render('homepage', {
-//           ...suggested,
-//           logged_in: req.session.logged_in
-//         })
-//       });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-// renders homepage with 5 cards from user collection
+// renders homepage with 5 random cards
 router.get('/homepage', withAuth, async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Pokemon }],
-    });
-    const user = JSON.parse(JSON.stringify(userData));
-    res.render('collection', {
-      ...user,
-      logged_in: true
-    });
+    const page = Math.ceil(Math.random() * 10);
+    pokemon.card.where({ pageSize: 5, page })
+      .then((cards) => {
+        const randomData = shuffle(cards.data)
+        const suggestedDataMap = randomData.map(card => {
+          return {
+            rname: card.name,
+            rimages: card.images.large,
+            rrarity: card.rarity,
+            rid: card.id,
+          }
+        })
+        const suggested = JSON.parse(JSON.stringify(suggestedDataMap));
+        res.render('homepage', {
+          ...suggested,
+          logged_in: req.session.logged_in
+        })
+      });
   } catch (err) {
     res.status(500).json(err);
   }
 });
+// // renders homepage with 5 cards from user collection
+// router.get('/homepage', withAuth, async (req, res) => {
+//   try {
+//     // Find the logged in user based on the session ID
+//     const userData = await User.findByPk(req.session.user_id, {
+//       attributes: { exclude: ['password'] },
+//       include: [{ model: Pokemon }],
+//     });
+//     const user = JSON.parse(JSON.stringify(userData));
+//     res.render('collection', {
+//       ...user,
+//       logged_in: true
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 // renders login
 router.get('/login', (req, res) => {
