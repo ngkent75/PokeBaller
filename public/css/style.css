@@ -31,7 +31,14 @@ body {
     align-content: center;
     padding: 0;
     border: none;
+    box-shadow: 0 0 20px rgb(14, 14, 14);
+    transition: 1s;
     /* flex-wrap: ; */
+}
+
+.card:hover {
+    transform:scale(1.1);
+    z-index: 2;
 }
 
 #navbarDropdownMenuLink {
