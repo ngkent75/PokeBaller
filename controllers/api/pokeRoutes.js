@@ -68,9 +68,12 @@ router.get('/local/:id', async (req, res) => {
 });
 
 // post pokemon card
-router.post('/pokemon', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
-        const newPokemonData = await Pokemon.create(req.body);
+        const newPokemonData = await Pokemon.create({
+            ...req.body,
+            user_id: req.session.user_id
+        });
 
         res.status(200).json(newPokemonData);
     } catch (err) {
