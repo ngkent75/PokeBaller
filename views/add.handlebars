@@ -19,10 +19,9 @@
 </nav>
 
 
-
 <div class="row justify-content-center">
-    <div class="col-3">
         <h2 id="add-crd" class="text-center">Search Cards</h2>
+    <div class="col-3 search">
         <form id="add-form" class="input-card text-center">
             <input id="search-card" list="card-list" name="crd">
             <datalist id="crd-list">
@@ -43,8 +42,11 @@
     {{#each this}}
 
 
-    <button onclick="add('{{id}}', '{{name}}', '{{rarity}}', '{{images}}')" class="card col-2">  
+    <button onclick="add('{{id}}', '{{name}}', '{{rarity}}', '{{images}}')" class="card col-2">
         <img src="{{images}}" class="img-responsive w-100" alt="{{name}}">
+        <div class="overlay">
+            <p class="rare-text">Rarity: {{rarity}}</p>
+        </div>
     </button>
 
 

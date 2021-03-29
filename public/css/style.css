@@ -18,9 +18,10 @@ body {
     margin: 20px;
     font-family: "Pokemon";
 }
+
 /* LOGIN/SIGNUP PAGE STYLES *****************************/
 
-.container{
+.container {
     max-width: 1250px;
 }
 
@@ -33,13 +34,51 @@ body {
     border: none;
     box-shadow: 0 0 20px rgb(14, 14, 14);
     transition: 1s;
-    /* flex-wrap: ; */
+    position: relative;
 }
 
 .card:hover {
-    transform:scale(1.1);
+    transform: scale(1.1);
     z-index: 2;
 }
+
+/* Styling on hover */
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    transition: .5s ease;
+    background-color: transparent;
+    margin: auto;
+}
+
+.card:hover .overlay {
+    background-color: rgba(128, 128, 128, 0.5);
+}
+
+.rare-text {
+    color: transparent;
+    opacity: 1;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    transition: .5s ease;
+}
+
+.card:hover .rare-text{
+    color: white;
+}
+/*Styling on rarity */
 
 /* NAV BAR STYLING **************************************/
 #navbarDropdownMenuLink {
@@ -69,18 +108,31 @@ body {
     text-shadow: 0px 0px 5px #ca2b2b;
 }
 
-/* ADD FORM STYLING **************************************/
-#add-form {
-    border: 2px black solid;
-    height: 320px;
-    
-}
-
 /* SEARCH FORM STYLING ***********************************/
 #search-card {
     margin-top: 28px;
 }
 
+.sample-search {
+    z-index: 0;
+    width: 320px;
+}
+
+.search {
+    position: relative;
+    bottom: 20px;
+    border: 6px solid black;
+    padding: 40px;
+    background: linear-gradient(red, darkred);
+}
+
+#add-form {
+    z-index: 1;
+    position: relative;
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
 /* LOGIN/SIGNUP FORM STYLING *****************************/
 .login-box {
