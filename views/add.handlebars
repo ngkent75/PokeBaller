@@ -40,8 +40,9 @@
 <section class="row justify-center">
     {{#each this}}
 
-
-    <img src="{{images}}" class="img-responsive card col-2" alt="{{name}}">
+    <a href="/pokemon/{{id}}">
+        <img src="{{images}}" class="img-responsive card col-2" alt="{{name}}">
+    </a>
 
 
     {{/each}}

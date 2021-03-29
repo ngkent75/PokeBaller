@@ -96,6 +96,7 @@ router.get('/add', async (req, res) => {
 });
 
 
+
 // redirects root to homepage if logged in, login page if logged out
 router.get('/', withAuth, async (req, res) => {
   try {
