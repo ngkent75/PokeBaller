@@ -54,13 +54,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-// router.post('/pokemon/:id', async (req, res) => {
-//     try {
-//         const newPokemonData = await Pokemon.create
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// })
+
 
 // used to login
 router.post('/login', async (req, res) => {
