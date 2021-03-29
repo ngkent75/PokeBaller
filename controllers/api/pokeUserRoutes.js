@@ -34,10 +34,13 @@ router.post('/', async (req, res) => {
 
 //DELETE 1 ASSOCIATION
 router.delete('/:id', async (req, res) => {
+    console.log(req.params.id);
+    console.log(req.session.user_id);
     try {
         const poke_user = await PokemonUser.destroy({
             where: {
-                id: req.params.id
+                pokemon_id: req.params.id,
+                user_id: req.session.user_id
             }
         });
         if (!poke_user) {
