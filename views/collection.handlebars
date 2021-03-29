@@ -17,14 +17,12 @@
 </nav>
 
 <h2 class="header-two"> <span class="poke-red">Your</span> Collection:</h2>
-<section class="flex-row justify-center">
+<section class="row justify-center">
     {{!-- {{#if users.pokemons.length}} --}}
     {{#each pokemons}}
-    <section class="card">
-        <div class="card-body">
-            <img src="{{this.images}}" alt="{{this.name}}">
-        </div>
-    </section>
+
+    <img src="{{this.images}}" class="img-responsive card col-2" alt="{{this.name}}">
+
     {{/each}}
     {{!-- {{/if}} --}}
 </section>
