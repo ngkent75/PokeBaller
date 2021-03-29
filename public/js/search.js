@@ -12,19 +12,19 @@ const add = async (id,name,rarity,images) => {
     console.log(name);
     console.log(rarity);
     console.log(images);
-    const response = await fetch(`/api/cards`, { 
+    const response = await fetch(`/api/pokeRoutes`, { 
         method: 'POST',
         body: JSON.stringify({ id, name, rarity, images }),
         headers: {
            'Content-Type': 'application/json'
         }
     });
-    if (response.ok) {
-        document.location.replace(`/search/${searchInput}`);
+    // if (response.ok) {
+    //     document.location.replace(`/search/${searchInput}`);
 
-    } else {
-        console.log('Poke-Failure: It was not very effective');
-    }
+    // } else {
+    //     console.log('Poke-Failure: It was not very effective');
+    // }
 }
 document.querySelector('.card-table').addEventListener('click', function(e){
     if(e.target.classList.contains('card')){
