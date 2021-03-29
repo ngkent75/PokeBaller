@@ -8,6 +8,9 @@ const {
   PokemonUser
 } = require('../models');
 const withAuth = require('../utils/auth');
+const searchTerm = require('../')
+
+
 
 // ANYTHING WITH WITHAUTH WILL REDIRECT YOU TO LOGIN IF YOU AREN'T ALREADY LOGGED IN
 
@@ -67,9 +70,9 @@ router.get('/collection', withAuth, async (req, res) => {
 });
 
 // Uses npm package to get all pokemon based on name
-router.get('/add', async (req, res) => {
+router.get('/search/:pokemonName', async (req, res) => {
   try {
-    const pokemonName = 'Charizard';
+    // const pokemonName = 'pikachu';
     const findAllPokemonByName = () => {
       pokemon.card.all({ q: `name:${pokemonName}` })
         .then((cards) => {
@@ -116,6 +119,7 @@ router.get('/homepage', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 // shows collection based on user id
 router.get('/collection/:id', withAuth, async (req, res) => {
   try {
