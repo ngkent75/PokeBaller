@@ -1,14 +1,14 @@
 const pokemon = require('pokemontcgsdk');
 pokemon.configure({ apiKey: '80be9899-d5a3-48b0-bced-3f2974372f12' });
-
+const withAuth = require('../utils/auth');
 const router = require('express').Router();
+const shuffle = require('lodash.shuffle');
+
 const {
   User,
   Pokemon,
   PokemonUser
 } = require('../models');
-const withAuth = require('../utils/auth');
-const searchTerm = require('../');
 // const shuffle = require('lodash.shuffle');
 
 
@@ -98,10 +98,14 @@ router.get('/search/:pokemonName', async (req, res) => {
   }
 });
 
+//get random/suggested 5 pokemon cards
+// router.get('/homepage')
+
+
 // renders a blank page with add
 router.get('/add', async (req, res) => {
-  try{
-    res.render('add',{})
+  try {
+    res.render('add', {})
   } catch (err) {
     res.status(500).json(err);
   }
@@ -118,10 +122,24 @@ router.get('/', withAuth, async (req, res) => {
 // renders homepage
 router.get('/homepage', withAuth, async (req, res) => {
   try {
-    res.render('homepage', {
-      // users,
-      logged_in: req.session.logged_in,
-    });
+    const page = Math.ceil(Math.random() * 10);
+    pokemon.card.where({ pageSize: 5, page })
+      .then((cards) => {
+        const randomData = shuffle(cards.data)
+        const suggestedDataMap = randomData.map(card => {
+          return {
+            name: card.name,
+            images: card.images.large,
+            rarity: card.rarity,
+            id: card.id,
+          }
+        })
+        const suggested = JSON.parse(JSON.stringify(suggestedDataMap));
+        res.render('homepage', {
+          ...suggested,
+          logged_in: req.session.logged_in
+        })
+      });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -153,20 +171,6 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-// //get random/suggested 5 pokemon cards
-// const page = Math.ceil(Math.random()*10);
-// console.log(page);
-// pokemon.card.where({ pageSize:5, page })
-//     .then((cards) => {
-//         const randomData = shuffle(cards.data)
-//         console.log(randomData.map(card => {
-//           return {
-//             name: card.name,
-//             image: card.images.large,
-//             rarity: card.rarity,
-//             id: card.id,
-//             // price: card.tcgplayer.prices.holofoil.market
-//           }
-//         }))
-// });
+
+
 module.exports = router;
