@@ -1,6 +1,8 @@
 <div class="container-fluid" id="login-header">
     <div class="col-4">
-        <img src="/images/pokeballer-logo-sm.png" alt="PokeBaller" />
+        <a href="/homepage">
+            <img src="/images/pokeballer-logo-sm.png" alt="PokeBaller" />
+        </a>
     </div>
 </div>
 
@@ -37,15 +39,15 @@
     </div>
 </div>
 
-<section class="row justify-center">
+<section class="row justify-center card-table">
     {{#each this}}
 
-    <a href="/pokemon/{{id}}" class="card col-2">
-        <img src="{{images}}" class="img-responsive card" alt="{{name}}">
-    </a>
+    <button onclick="add('{{id}}')" class="card col-2">
+        <img src="{{images}}" class="img-responsive w-100" alt="{{name}}">
+    </button>
 
 
     {{/each}}
 </section>
 
-<script src = "/js/search.js"></script>
+<script src="/js/search.js"></script>
