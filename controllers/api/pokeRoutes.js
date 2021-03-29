@@ -71,6 +71,7 @@ router.get('/local/:id', async (req, res) => {
 router.post('/pokemon', async (req, res) => {
     try {
         const newPokemonData = await Pokemon.create(req.body);
+
         res.status(200).json(newPokemonData);
     } catch (err) {
         res.status(500).json(err);
