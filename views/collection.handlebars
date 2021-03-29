@@ -18,11 +18,13 @@
 
 <h2 class="header-two"> <span class="poke-red">Your</span> Collection:</h2>
 <section class="flex-row justify-center">
+    {{!-- {{#if users.pokemons.length}} --}}
+    {{#each pokemons}}
     <section class="card">
-        <p>email: {{email}}</p>
-        <p>pokemons: {{pokemons.[0].images}}</p>
         <div class="card-body">
-            <img src="{{pokemons.[0].images}}" alt="{{pokemons.[0].name}}">
+            <img src="{{this.images}}" alt="{{this.name}}">
         </div>
     </section>
+    {{/each}}
+    {{!-- {{/if}} --}}
 </section>
