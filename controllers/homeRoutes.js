@@ -107,5 +107,15 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// used to get card information when a card is clicked upon
+router.get('/information', (req, res) => {
+  try {
+    res.render('information', {
+      logged_in: req.session.logged_in,
+    });
+  } catch(err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
