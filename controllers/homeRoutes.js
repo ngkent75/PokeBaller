@@ -74,7 +74,7 @@ router.get('/search/:pokemonName', async (req, res) => {
   try {
     // const pokemonName = 'pikachu';
     const findAllPokemonByName = () => {
-      pokemon.card.all({ q: `name:${pokemonName}` })
+      pokemon.card.all({ q: `name:${req.params.pokemonName}` })
         .then((cards) => {
           const cardMap = cards.map(card => {
             return {
