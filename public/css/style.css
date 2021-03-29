@@ -14,25 +14,33 @@
         width: 100%;
         min-width: 400px
     }
-}
-
-@media only screen and (min-width : 320px) and (max-width : 600px) {
+    .search {
+        width: 75%;
+        height: auto;
+    }
     .navbar {
         text-align: center;
         margin: 0;
 		padding: 0;
 		text-align: center;
+        
     }
     nav ul {
         margin: 0;
         padding: 10px;
+        justify-content: center;
     }
     nav li {
         display: inline;
+        justify-content: center;
     }
     nav a {
         display: inline-block;
         padding: 1em;
+        justify-content: center;
+    }
+    .header-two {
+        text-align: center;
     }
 }
 
@@ -163,6 +171,7 @@ body {
     background: linear-gradient(red, darkred);
     margin-left: 40px;
     margin-right: 40px;
+    margin-bottom: 50px;
 }
 
 
