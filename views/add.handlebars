@@ -37,12 +37,12 @@
     </div>
 </div>
 
-<section class="row justify-center">
+<section class="row justify-center card-table">
     {{#each this}}
 
-    <a href="/pokemon/{{id}}" class="card col-2">
-        <img src="{{images}}" class="img-responsive card" alt="{{name}}">
-    </a>
+    <button onclick="add('{{id}}')" class="card col-2">  
+        <img src="{{images}}" class="img-responsive w-100" alt="{{name}}">
+    </button>
 
 
     {{/each}}
