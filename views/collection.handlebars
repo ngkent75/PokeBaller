@@ -19,14 +19,19 @@
 </nav>
 
 <h2 class="header-two"> <span class="poke-red">Your</span> Collection:</h2>
-<section class="row justify-center">
-    {{!-- {{#if users.pokemons.length}} --}}
+<section class="row justify-content-center card-table">
     {{#each pokemons}}
 
 
-    <img src="{{this.images}}" class="img-responsive card col-2" alt="{{this.name}}">
+    <button onclick="remove('{{this.id}}', '{{this.name}}', '{{this.rarity}}', '{{this.images}}')" class="card col-2">
+        <img src="{{this.images}}" class="img-responsive w-100" alt="{{this.name}}">
+        <div class="overlay">
+            <p class="rare-text">Rarity: {{this.rarity}}</p>
+        </div>
+    </button>
 
 
     {{/each}}
-    {{!-- {{/if}} --}}
 </section>
+
+<script src="/js/collection.js"></script>
