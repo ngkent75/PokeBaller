@@ -1,51 +1,63 @@
-   <div class="container-fluid" id="login-header">
-        <div class="col-4">
-            <a href= "/homepage">
+<div class="container-fluid" id="login-header">
+    <div class="col-4">
+        <a href="/homepage">
             <img src="/images/pokeballer-logo-sm.png" alt="PokeBaller" />
-            </a>
-        </div>
+        </a>
     </div>
-    <nav class="navbar justify-content-end navbar-dark bg-dark">
-        <!-- Navbar content -->
-        <ul class="nav justify-content-end">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    COLLECTION
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="/collection">VIEW</a></li> <!-- TODO: replace # with code -->
-                    <li><a class="dropdown-item" href="/add">ADD</a></li> <!-- TODO: replace # with code -->
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active logout" href="/login">LOGOUT</a>
-            </li>
-        </ul>
-    </nav>
+</div>
+<nav class="navbar justify-content-end navbar-dark bg-dark">
+    <!-- Navbar content -->
+    <ul class="nav justify-content-end">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                COLLECTION
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="/collection">VIEW</a></li> <!-- TODO: replace # with code -->
+                <li><a class="dropdown-item" href="/add">ADD</a></li> <!-- TODO: replace # with code -->
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active logout" href="/login">LOGOUT</a>
+        </li>
+    </ul>
+</nav>
 
 <div class="container">
     <h2 class="header-two"> <span class="poke-red">Your</span> Collection:</h2>
+    <section class="row justify-center card-table">
+        {{#each this}}
 
 
-    <div class="d-flex flex-row justify-content-center">
-        <div class="col-4 card">Card1</div>
-        <div class="col-4 card">Card2</div>
-        <div class="col-4 card">Card3</div>
-        <div class="col-4 card">Card4</div>
-        <div class="col-4 card">Card5</div>
-    </div>
+        <button onclick="add('{{id}}', '{{name}}', '{{rarity}}', '{{images}}')" class="card col-2">
+            <img src="{{images}}" class="img-responsive w-100" alt="{{name}}">
+            <div class="overlay">
+                <p class="rare-text">Rarity: {{rarity}}</p>
+            </div>
+        </button>
+
+
+        {{/each}}
+    </section>
 
     <h2 class="header-two"> <span class="poke-red">Suggested</span> Cards:</h2>
+    <section class="row justify-center card-table">
+        {{#each this}}
 
 
-    
-    <div class="d-flex flex-row justify-content-center">
-        <div class="col-4 card">Card1</div>
-        <div class="col-4 card">Card2</div>
-        <div class="col-4 card">Card3</div>
-        <div class="col-4 card">Card4</div>
-        <div class="col-4 card">Card5</div>
-    </div>
+        <button onclick="add('{{rid}}', '{{rname}}', '{{rrarity}}', '{{rimages}}')" class="card col-2">
+            <img src="{{rimages}}" class="img-responsive w-100" alt="{{rname}}">
+            <div class="overlay">
+                <p class="rare-text">Rarity: {{rrarity}}</p>
+            </div>
+        </button>
+
+
+        {{/each}}
+    </section>
 
 </div>
+
+{{!--
+<script src="/js/search.js"></script> --}}

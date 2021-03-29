@@ -57,6 +57,28 @@ router.get('/pokemon/:id', async (req, res) => {
 });
 
 
+router.get('/random/pokemon', async (req, res) => {
+    try {
+        const page = Math.ceil(Math.random()*10);
+        console.log(page);
+        pokemon.card.where({ pageSize:5, page })
+            .then((cards) => {
+                const randomData = shuffle(cards.data)
+                res.status(200).json(randomData.map(card => {
+                  return {
+                    name: card.name,
+                    images: card.images.large,
+                    rarity: card.rarity,
+                    id: card.id,
+                  }
+                }))
+        });
+        
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
 router.get('/local/:id', async (req, res) => {
     try {
         const localPokemonData = await Pokemon.findByPk(req.params.id);
