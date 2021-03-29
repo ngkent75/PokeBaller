@@ -1,15 +1,11 @@
-const newSearchFormHandler = async (event) => {
+//  console.log('linked')
+ const searchTerm = (event) => {
     event.preventDefault();
-
-    const search = document.querySelector('#search-bar').value.trim();
-
-    if (search) {
-        
-    }
-
-
-
-
-
-
+    const searchInput = document.querySelector('#search-card').value.trim();
+    document.location.replace(`/search/${searchInput}`)
+    
+    // return
+console.log(searchInput);
 }
+
+document.querySelector('#add-form').addEventListener('submit',searchTerm)
