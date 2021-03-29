@@ -1,3 +1,6 @@
+const pokemon = require('pokemontcgsdk');
+pokemon.configure({ apiKey: '80be9899-d5a3-48b0-bced-3f2974372f12' });
+
 const router = require('express').Router();
 const {
   User,
@@ -45,6 +48,7 @@ router.get('/users/:id', async (req, res) => {
   }
 })
 
+// get user collection
 router.get('/collection', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
@@ -62,6 +66,56 @@ router.get('/collection', withAuth, async (req, res) => {
   }
 });
 
+// Uses npm package to get all pokemon based on name
+router.get('/add', async (req, res) => {
+  try {
+    const pokemonName = 'Charizard';
+    const findAllPokemonByName = () => {
+      pokemon.card.all({ q: `name:${pokemonName}` })
+        .then((cards) => {
+          const cardMap = cards.map(card => {
+            return {
+              name: card.name,
+              images: card.images.large,
+              rarity: card.rarity,
+              id: card.id,
+            }
+          })
+          const card = JSON.parse(JSON.stringify(cardMap));
+          res.render('add', {
+            ...card,
+            logged_in: req.session.logged_in
+          })
+
+        })
+    };
+    findAllPokemonByName();
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+// redirects root to homepage if logged in, login page if logged out
+router.get('/', withAuth, async (req, res) => {
+  try {
+    res.redirect('/homepage');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+// renders homepage
+router.get('/homepage', withAuth, async (req, res) => {
+  try {
+    res.render('homepage', {
+      // users,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+// shows collection based on user id
 router.get('/collection/:id', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.params.id, {
@@ -77,27 +131,7 @@ router.get('/collection/:id', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-router.get('/', withAuth, async (req, res) => {
-  try {
-    res.redirect('/homepage');
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get('/homepage', withAuth, async (req, res) => {
-  try {
-    res.render('homepage', {
-      // users,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-
+// renders login
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/homepage');
@@ -107,15 +141,5 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-// used to get card information when a card is clicked upon
-router.get('/information', (req, res) => {
-  try {
-    res.render('information', {
-      logged_in: req.session.logged_in,
-    });
-  } catch(err) {
-    res.status(500).json(err);
-  }
-});
 
 module.exports = router;

@@ -1,20 +1,20 @@
-       <div class="container-fluid" id="login-header">
-        <div class="col-4">
-            <img src="/images/pokeballer-logo-sm.png" alt="PokeBaller" />
-        </div>
+<div class="container-fluid" id="login-header">
+    <div class="col-4">
+        <img src="/images/pokeballer-logo-sm.png" alt="PokeBaller" />
     </div>
+</div>
 
-    <nav class="navbar justify-content-end navbar-dark bg-dark">
-        <!-- Navbar content -->
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">VIEW</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active logout" href="#">LOGOUT</a>
-            </li>
-        </ul>
-    </nav>
+<nav class="navbar justify-content-end navbar-dark bg-dark">
+    <!-- Navbar content -->
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/collection">VIEW</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active logout" href="/login">LOGOUT</a>
+        </li>
+    </ul>
+</nav>
 
 
 
@@ -36,3 +36,13 @@
         </form>
     </div>
 </div>
+
+<section class="row justify-center">
+    {{#each this}}
+
+
+    <img src="{{images}}" class="img-responsive card col-2" alt="{{name}}">
+
+
+    {{/each}}
+</section>

@@ -10,7 +10,7 @@ const { Pokemon, User, PokemonUser } = require('../../models');
 
 router.get('/', async (req, res) => {
     try {
-        const pokemonName = 'Beedrill';
+        const pokemonName = 'Charizard';
         const findAllPokemonByName = () => {
             pokemon.card.all({ q: `name:${pokemonName}` })
             .then((cards) => {
@@ -35,26 +35,3 @@ router.get('/', async (req, res) => {
 const pokemonId = 'ex11-1';
 
 module.exports = router;
-
-// const pokemonGet = () => {pokemon.card.all({ q: `id:${pokemonId}` })
-// .then((cards) => {
-//     console.log(cards.map(card => {
-//         return {
-//             name: card.name,
-//             image: card.images.large,
-//             rarity: card.rarity,
-//             id: card.id,
-//         }
-//     })) 
-
-// })
-// }
-// router.get('/:id', async (req, res) => {
-//     try {
-//         res.status(200).json(pokemonGet)
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// })
-
-
