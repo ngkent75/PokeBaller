@@ -72,7 +72,7 @@ router.get('/collection', withAuth, async (req, res) => {
 // Uses npm package to get all pokemon based on name
 router.get('/search/:pokemonName', async (req, res) => {
   try {
-    // const pokemonName = 'pikachu';
+    const pokemonName = 'pikachu';
     const findAllPokemonByName = () => {
       pokemon.card.all({ q: `name:${req.params.pokemonName}` })
         .then((cards) => {
@@ -97,6 +97,15 @@ router.get('/search/:pokemonName', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// renders a blank page with add
+router.get('/add', async (req, res) => {
+  try{
+    res.render('add',{})
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 
 
 
