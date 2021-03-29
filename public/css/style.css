@@ -29,7 +29,7 @@ body {
 /* STYLING FOR EACH CARD DISPLAY ************************/
 .card {
     margin: 20px;
-    align-content: center;
+    /* align-content: center; */
     padding: 0;
     border: none;
     box-shadow: 0 0 20px rgb(14, 14, 14);
@@ -39,7 +39,6 @@ body {
 
 .card:hover {
     transform: scale(1.1);
-    z-index: 2;
 }
 
 /* Styling on hover */
@@ -58,7 +57,7 @@ body {
 }
 
 .card:hover .overlay {
-    background-color: rgba(128, 128, 128, 0.5);
+    background-color: rgba(128, 128, 128, 0.7);
 }
 
 .rare-text {
@@ -66,7 +65,7 @@ body {
     opacity: 1;
     font-size: 20px;
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -78,7 +77,6 @@ body {
 .card:hover .rare-text{
     color: white;
 }
-/*Styling on rarity */
 
 /* NAV BAR STYLING **************************************/
 #navbarDropdownMenuLink {
@@ -110,29 +108,27 @@ body {
 
 /* SEARCH FORM STYLING ***********************************/
 #search-card {
-    margin-top: 28px;
+    margin-top: 10%;
+    margin-bottom: 20%;
 }
 
-.sample-search {
-    z-index: 0;
-    width: 320px;
-}
+/* .sample-search {
+    width: 320px;GIT
+} */
 
 .search {
-    position: relative;
+    /* position: relative; */
     bottom: 20px;
     border: 6px solid black;
-    padding: 40px;
+    border-radius: 5px;
+    padding-top: 1%;
+    padding-bottom: 5%;
     background: linear-gradient(red, darkred);
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
-#add-form {
-    z-index: 1;
-    position: relative;
-    bottom: 25%;
-    left: 50%;
-    transform: translateX(-50%);
-}
+
 
 /* LOGIN/SIGNUP FORM STYLING *****************************/
 .login-box {
