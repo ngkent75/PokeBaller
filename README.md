@@ -1,70 +1,61 @@
-# Unit 15: Project 2
 
-## Overview
+  #PokeBaller
 
-Welcome to Project 2! This is yet another important milestone in your full-stack journey: designing and building your first full-stack web application. You and your team will design and build an app using the MVC paradigm, create your own server-side API, add user authentication, and connect to a database.
+  ## Table of Contents
+  ---
+  * [Description](#description) | [Installation](#installation) | [Tests](#tests) | [Usage](#usage) | [Contributing](#contributing) | [Questions](#questions) | [License](#license)
 
-## Key Topics
+  ## Description
+  ---
+  Want to digitally track your Pokemon trading cards? Pokeballer is the app for you! This heroku app loads Pokemon TCG data and images where users can add their cards to a digital collection and view all the available cards for each pokemon.
 
-The following topics will be covered in this unit:
+  ## Installation
+  ---
+  NONE.
 
-* Full-stack applications
+  ## Tests
+  ---
+  NONE.
 
-* Git branching workflow
+  ## Usage
+  ---
+  Use PokeBaller as a digital space where you don’t have to filter through physical cards to see what's in your collection. It’s a tool that lets you have your card collection on any device.
 
-* Agile software development
+  ## Contributing
+  ---
+  Dylan Jacob, Summer Moya-Mendez, Nathan Kent, James Jordan, Nicholas Marrone
 
-* Collaborative development
+  ## Questions
+  ---
+  https://github.com/ngkent75
 
-## Learning Objectives
+   ## Credits
+  ---
+  Trilogy Education Services, especially instructors Anthony C. and Max A. for their great guidance and troubleshooting
+  https://github.com/PokemonTCG - The Github repos of the Pokeon TCG
 
-You will be employer-ready if you are able to:
+  ## License
+  ---
+  ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)(https://opensource.org/licenses/MIT)
 
-* Speak technically about a feature you implemented in your project
+  MIT License
 
-* Explain and execute git branching workflow in a collaborative project
+Copyright (c) [year] [fullname]
 
-* Resolve merge conflicts
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-* Explain agile software development
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-* Design, build and deploy a full-stack web application to Heroku
-
-* Prepare a professional presentation and repository README for your project
-
-## Homework
-
-With your team, you’ll conceive and execute a design that solves a real-world problem. In creating your first collaborative full-stack application, you’ll combine a robust back end--with servers, databases, advanced APIs, and user authentication—-to an intuitive front end. You’ll continue to build on the agile development methodologies you’ve used throughout this course, like storing your project code in GitHub, managing your work with a project management tool, and implementing feature and bug fixes using the Git branch workflow and pull requests.
-
-Instead of using the front end you developed for your first project, you should start from scratch. Doing so will help you reinforce your existing front-end abilities and solidify your understanding of the dynamic between the front end and back end. Also, you’ve likely improved your skills since that first project, so with a stronger foundation now you can build a better application, using all of the additional practice you’ve had in the last several weeks.
-
-## Career Connection
-
-For more information about Career Services, including coding milestones, demo days, technical toolkits, workshops, and additional resources, visit the [Career Services website](https://mycareerspot.org/).
-
-## Heads-Up
-
-In the next unit, you'll continue to work on your group projects. You'll end the week by presenting your project to your class. Once your project is complete, you'll want to update your professional materials and add your new project to your portfolio.
-
-## Resources
-
-Here are some additional resources to help solidify the topics covered in this unit.
-
-### Full-Stack Blog Posts
-
-Check out the [Full-Stack Blog](https://coding-boot-camp.github.io/full-stack/) for additional resources, like walkthroughs, articles, and installation guides.
-
-  * 📖 [Deploy with Heroku and MySQL](https://coding-boot-camp.github.io/full-stack/heroku/deploy-with-heroku-and-mysql)
-
-### General
-
-Refer to these resources for additional information about topics covered in this unit.
-
-* 📖 [Agile Methodology](https://en.wikipedia.org/wiki/Agile_software_development)
-
-* 📖 [Git Branching](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows)
-
-* 📖 [Learn Enough Git to Be Dangerous](https://www.learnenough.com/git-tutorial/getting_started)
-
----
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
