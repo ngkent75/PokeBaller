@@ -64,6 +64,15 @@ body {
     max-width: 1250px;
 }
 
+.login-box {
+    margin: 60px 20px 20px 20px;
+}
+
+.signup-box {
+    margin: 60px 20px 20px 20px;
+
+}
+
 
 /* STYLING FOR EACH CARD DISPLAY ************************/
 .card {
@@ -158,7 +167,7 @@ body {
 }
 
 /* .sample-search {
-    width: 320px;GIT
+    width: 320px;
 } */
 
 .search {
@@ -174,14 +183,17 @@ body {
     margin-bottom: 50px;
 }
 
+/* HOMEPAGE FORM STYLING *****************************/
 
-
-/* LOGIN/SIGNUP FORM STYLING *****************************/
-.login-box {
-    margin: 60px 20px 20px 20px;
+#welcome  {
+    margin: 20px;
+    padding: 20px;
 }
-
-.signup-box {
-    margin: 60px 20px 20px 20px;
-
+#welcome h2 {
+    font-family: "Pokemon";
+    font-size: 44px;
+    margin-bottom: 40px;
+}
+#welcome p {
+    font-size: 24px;
 }
