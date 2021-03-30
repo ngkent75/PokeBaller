@@ -18,27 +18,18 @@
     </ul>
 </nav>
 
-
-<div class="row justify-content-center text-center welcome">
+<div class="row justify-content-center text-center addbox">
     <h2 id="add-crd" class="text-center header-two"><span class="poke-red">Search</span> Cards</h2>
-    <p>Type the name of the pokemon you want to search in the search bar,</p>
-    <p class="mb-5">Click a card for it to be added to your collection,</p>
+    <p>Type the name of the pokemon you want to search in the search bar.</p>
     <div class="col-sm-auto search">
         <img src="/images/pokemon_search.png" class="w-100 search-img" alt="search_pokemon">
         <form id="add-form" class="input-card text-center col-sm-auto">
             <input id="search-card" list="card-list" name="crd">
-            {{!-- <datalist id="crd-list">
-            </datalist> --}}
-            <input id="BtnCard" type="submit" value="Submit">
-            <!-- Modal body -->
-            {{!-- <div class="modal" id="alert-modal">
-                <h2>Warning</h2>
-                <p>Card not Found</p>
-                <!-- Keep onclick attribute on modal -->
-                <button class="close">close</button>
-            </div> --}}
+            <input id="BtnCard" type="submit" value="Search">
         </form>
     </div>
+    <h2 id="add-crd" class="text-center header-two mt-1"><span class="poke-red">Add</span> Cards</h2>
+    <p class="mb-5">Click a card for it to be added to your collection.</p>
 </div>
 
 <section class="row justify-content-center card-table">
@@ -57,3 +48,4 @@
 </section>
 
 <script src="/js/search.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
