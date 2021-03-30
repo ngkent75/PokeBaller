@@ -1,5 +1,6 @@
 const pokemon = require('pokemontcgsdk');
-pokemon.configure({ apiKey: '80be9899-d5a3-48b0-bced-3f2974372f12' });
+require('dotenv').config();
+pokemon.configure({ apiKey: process.env.KEY });
 const withAuth = require('../utils/auth');
 const router = require('express').Router();
 const shuffle = require('lodash.shuffle');
@@ -7,7 +8,6 @@ const shuffle = require('lodash.shuffle');
 const {
   User,
   Pokemon,
-  PokemonUser
 } = require('../models');
 // const shuffle = require('lodash.shuffle');
 
@@ -98,8 +98,6 @@ router.get('/search/:pokemonName', async (req, res) => {
   }
 });
 
-//get random/suggested 5 pokemon cards
-// router.get('/homepage')
 
 
 // renders a blank page with add
@@ -144,23 +142,6 @@ router.get('/homepage', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-// // renders homepage with 5 cards from user collection
-// router.get('/homepage', withAuth, async (req, res) => {
-//   try {
-//     // Find the logged in user based on the session ID
-//     const userData = await User.findByPk(req.session.user_id, {
-//       attributes: { exclude: ['password'] },
-//       include: [{ model: Pokemon }],
-//     });
-//     const user = JSON.parse(JSON.stringify(userData));
-//     res.render('collection', {
-//       ...user,
-//       logged_in: true
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 // renders login
 router.get('/login', (req, res) => {

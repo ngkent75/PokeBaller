@@ -1,8 +1,6 @@
 const router = require('express').Router();
 const {
     PokemonUser,
-    User,
-    Pokemon
 } = require('../../models');
 
 // GET ALL ASSOCIATIONS
