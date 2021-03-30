@@ -185,15 +185,15 @@ body {
 
 /* HOMEPAGE FORM STYLING *****************************/
 
-#welcome  {
+.welcome  {
     margin: 20px;
     padding: 20px;
 }
-#welcome h2 {
+.welcome h2 {
     font-family: "Pokemon";
     font-size: 44px;
     margin-bottom: 40px;
 }
-#welcome p {
+.welcome p {
     font-size: 24px;
 }

@@ -1,7 +1,7 @@
 <div class="container-fluid" id="login-header">
     <div class="col-4">
         <a href="/homepage">
-            <img src="/images/pokeballer-logo-sm.png" alt="PokeBaller" class="logo"/>
+            <img src="/images/pokeballer-logo-sm.png" alt="PokeBaller" class="logo" />
         </a>
     </div>
 </div>
@@ -19,15 +19,17 @@
 </nav>
 
 
-<div class="row justify-content-center">
-        <h2 id="add-crd" class="text-center">Search Cards</h2>
+<div class="row justify-content-center text-center welcome">
+    <h2 id="add-crd" class="text-center header-two"><span class="poke-red">Search</span> Cards</h2>
+    <p>Type the name of the pokemon you want to search in the search bar,</p>
+    <p class="mb-5">Click a card for it to be added to your collection,</p>
     <div class="col-sm-auto search">
         <img src="/images/pokemon_search.png" class="w-100 search-img" alt="search_pokemon">
         <form id="add-form" class="input-card text-center col-sm-auto">
-            <input  id="search-card" list="card-list" name="crd">
+            <input id="search-card" list="card-list" name="crd">
             {{!-- <datalist id="crd-list">
             </datalist> --}}
-            <input  id="BtnCard" type="submit" value="Submit">
+            <input id="BtnCard" type="submit" value="Submit">
             <!-- Modal body -->
             {{!-- <div class="modal" id="alert-modal">
                 <h2>Warning</h2>
