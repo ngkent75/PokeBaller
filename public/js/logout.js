@@ -7,7 +7,7 @@ const logoutFormHandler = async () => {
     if (response.ok) {
         document.location.replace('/');
     } else {
-        console.log(response.statusText);  //TODO 
+        console.log(response.statusText);
     }
 };
 

@@ -19,8 +19,7 @@ Pokemon.init(
       allowNull: true,
     },
     images: {
-      type: DataTypes.STRING,   //public\images\sample_card.png
-      // defaultValue: '/images/sample_card.png',
+      type: DataTypes.STRING,
       allowNull: false,
     },
   },
