@@ -34,7 +34,7 @@ router.get('/pokemon/:id', withAuth, async (req, res) => {
 });
 
 // GET USER by ID
-router.get('/users/:id', async (req, res) => {
+router.get('/users/:id', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.params.id, {
       include: [{
@@ -70,7 +70,7 @@ router.get('/collection', withAuth, async (req, res) => {
 });
 
 // Uses npm package to get all pokemon based on name
-router.get('/search/:pokemonName', async (req, res) => {
+router.get('/search/:pokemonName', withAuth, async (req, res) => {
   try {
     pokemon.card.all({ q: `name:${req.params.pokemonName}` })
       .then((cards) => {
@@ -101,9 +101,9 @@ router.get('/search/:pokemonName', async (req, res) => {
 
 
 // renders a blank page with add
-router.get('/add', async (req, res) => {
+router.get('/add', withAuth, async (req, res) => {
   try {
-    res.render('add', {})
+    res.render('add', {logged_in: req.session.logged_in})
   } catch (err) {
     res.status(500).json(err);
   }
