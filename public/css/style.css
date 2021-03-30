@@ -10,9 +10,11 @@
     .card {
         width: 75%;
     }
-    .logo {
+    /* .logo {
+        width: 45%;
+    } */
+    .logocontainer {
         width: 100%;
-        min-width: 400px
     }
     .search {
         width: 75%;
@@ -41,6 +43,13 @@
     }
     .header-two {
         text-align: center;
+
+    }
+    .container {
+        /* display: flex;
+        flex-direction: column;
+        justify-content: center; */
+        width: 100%;
     }
 }
 
@@ -50,7 +59,7 @@ body {
 
 /* FONT STYLE ON HEADERS ********************************/
 .poke-red {
-    color: #ca2b2b;
+    color: red;
 }
 
 .header-two {
@@ -62,6 +71,31 @@ body {
 
 .container {
     max-width: 1250px;
+}
+
+.container h2 {
+    font-family: 'Hind', sans-serif;
+    font-size: 44px;
+    margin-bottom: 40px;
+    width: 100%
+}
+.container p {
+    font-size: 24px;
+}
+
+.addbox  {
+    margin: 20px;
+    padding: 0px;
+}
+.addbox h2 {
+    font-family: 'Hind', sans-serif;
+    font-size: 44px;
+    margin-bottom: 40px;
+    width: 100%
+}
+.addbox p {
+    font-size: 24px;
+    font-family: 'Hind', sans-serif;
 }
 
 .login-box {
@@ -144,20 +178,24 @@ body {
 .nav-link {
     color: white;
     font-size: 24px;
+    font-weight: bold;
 }
 
 .logout {
-    color: #ca2b2b;
+    color: red;
+
 }
 
 .nav-link:hover {
-    color: #ca2b2b;
+    color: red;
     text-shadow: 0px 0px 3px white;
+    
 }
 
 .logout:hover {
     color: white;
-    text-shadow: 0px 0px 5px #ca2b2b;
+    text-shadow: 0px 0px 5px red;
+
 }
 
 /* SEARCH FORM STYLING ***********************************/
@@ -185,15 +223,13 @@ body {
 
 /* HOMEPAGE FORM STYLING *****************************/
 
-.welcome  {
-    margin: 20px;
-    padding: 20px;
+input {
+    border: 2px solid black;
+    border-radius: 5px;
 }
-.welcome h2 {
+
+#BtnCard {
+    background-color: white;
+    padding: 2px;
     font-family: 'Hind', sans-serif;
-    font-size: 44px;
-    margin-bottom: 40px;
-}
-.welcome p {
-    font-size: 24px;
 }
