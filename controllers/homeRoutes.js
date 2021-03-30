@@ -72,27 +72,27 @@ router.get('/collection', withAuth, async (req, res) => {
 // Uses npm package to get all pokemon based on name
 router.get('/search/:pokemonName', async (req, res) => {
   try {
-    // const pokemonName = 'pikachu';
-    const findAllPokemonByName = () => {
-      pokemon.card.all({ q: `name:${req.params.pokemonName}` })
-        .then((cards) => {
-          const cardMap = cards.map(card => {
-            return {
-              name: card.name,
-              images: card.images.large,
-              rarity: card.rarity,
-              id: card.id,
-            }
-          })
-          const card = JSON.parse(JSON.stringify(cardMap));
-          res.render('add', {
-            ...card,
-            logged_in: req.session.logged_in
-          })
-
+    pokemon.card.all({ q: `name:${req.params.pokemonName}` })
+      .then((cards) => {
+        const cardMap = cards.map(card => {
+          return {
+            name: card.name,
+            images: card.images.large,
+            rarity: card.rarity,
+            id: card.id,
+          }
         })
-    };
-    findAllPokemonByName();
+        const card = JSON.parse(JSON.stringify(cardMap));
+        console.log(card);
+        res.render('add', {
+          // https://stackoverflow.com/questions/35675076/handlebars-renders-extra-empty-objects-from-json-array-in-node-express-app
+          // Had issue with empty objects being rendered, found the solution in this stack overflow post
+          card: card,
+          logged_in: req.session.logged_in
+        })
+
+      })
+
   } catch (err) {
     res.status(500).json(err);
   }
@@ -134,7 +134,9 @@ router.get('/homepage', withAuth, async (req, res) => {
         })
         const suggested = JSON.parse(JSON.stringify(suggestedDataMap));
         res.render('homepage', {
-          ...suggested,
+          // https://stackoverflow.com/questions/35675076/handlebars-renders-extra-empty-objects-from-json-array-in-node-express-app
+          // Had issue with empty objects being rendered, found the solution in this stack overflow post
+          suggested: suggested,
           logged_in: req.session.logged_in
         })
       });
