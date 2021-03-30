@@ -2,7 +2,6 @@ const router = require('express').Router();
 const {
     Pokemon,
     User,
-    PokemonUser
 } = require('../../models')
 
 // GET all users
