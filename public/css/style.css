@@ -55,7 +55,7 @@ body {
 
 .header-two {
     margin: 20px;
-    font-family: "Pokemon";
+    font-family: 'Hind', sans-serif;
 }
 
 /* LOGIN/SIGNUP PAGE STYLES *****************************/
@@ -190,7 +190,7 @@ body {
     padding: 20px;
 }
 .welcome h2 {
-    font-family: "Pokemon";
+    font-family: 'Hind', sans-serif;
     font-size: 44px;
     margin-bottom: 40px;
 }
