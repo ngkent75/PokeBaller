@@ -1,19 +1,6 @@
-// set 
-const searchTerm = (event) => {
-    event.preventDefault();
-    const searchInput = document.querySelector('#search-card').value.trim();
-    document.location.replace(`/search/${searchInput}`)
-
-    // return
-    // console.log(searchInput);
-}
-
-//post pokemon to DB on add
+//seeds data and adds to collection
 const add = async (id, name, rarity, images) => {
-    console.log(id);
-    console.log(name);
-    console.log(rarity);
-    console.log(images);
+    // posts to local database
     const response = await fetch(`/api/pokeRoutes`, {
         method: 'POST',
         body: JSON.stringify({ id, name, rarity, images }),
@@ -22,7 +9,7 @@ const add = async (id, name, rarity, images) => {
         }
     });
     console.log(id);
-    //post pokeUser 
+    //posts collection 
     const data = { pokemon_id: id };
     const userResponse = await fetch(`/api/pokeUserRoutes`, {
         method: 'POST',
@@ -31,10 +18,10 @@ const add = async (id, name, rarity, images) => {
             'Content-Type': 'application/json'
         }
     })
-}
+};
+// listens for onclick for each card
 document.querySelector('.card-table').addEventListener('click', function (e) {
     if (e.target.classList.contains('card')) {
         add(e)
     }
 })
-document.querySelector('#add-form').addEventListener('submit', searchTerm)
