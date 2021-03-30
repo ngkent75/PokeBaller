@@ -2,11 +2,16 @@
 
 ## Table of Contents
 ---
-* [Description](#description) | [Usage](#usage) | [Demo](#demo) | [Preview](#preview) |[Installation](#installation) | [Tests](#tests) | [Contributing](#contributing) | [Questions](#questions) | [Sources-Tech](#sources-tech) | [License](#license)
+* [Description](#description)  | [Links](#links) | [Usage](#usage) | [Demo](#demo) | [Preview](#preview) |[Installation](#installation) | [Tests](#tests) | [Contributing](#contributing) | [Questions](#questions) | [Sources-Tech](#sources-tech) | [License](#license)
 
 ## Description
 ---
 Want to digitally track your Pokemon trading cards? Pokeballer is the app for you! This heroku app loads Pokemon TCG data and images where users can add their cards to a digital collection and view all the available cards for each pokemon.
+
+## Links
+---
+Deployed Application: https://evening-oasis-15758.herokuapp.com/
+Github Repo: https://github.com/ngkent75/PokeBaller
 
 ## Usage
 ---
