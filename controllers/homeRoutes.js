@@ -30,6 +30,7 @@ router.get('/pokemon/:id', withAuth, async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
+    // TODO: Add modal
   }
 });
 
