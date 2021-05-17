@@ -233,3 +233,16 @@ input {
     padding: 2px;
     font-family: 'Hind', sans-serif;
 }
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat( 4, 1fr);
+    grid-column-gap: 30px;
+    margin: 15px;
+}
+
+.btn-outline-secondary {
+  /* background-color: #83A00A; */
+  /* color: #C53A83; */
+  color: #83A00A;
+}

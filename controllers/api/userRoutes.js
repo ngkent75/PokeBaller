@@ -57,6 +57,7 @@ router.post('/', async (req, res) => {
 
 // used to login
 router.post('/login', async (req, res) => {
+    console.log(req.body.password);
     try {
         const dbUserData = await User.findOne({
             where: {
@@ -71,6 +72,7 @@ router.post('/login', async (req, res) => {
             res.status(400).json({
                 message: 'Cannot find a user associated with that email/password, please try again'
             });
+            alert('Cannot find a user associated with that email/password, please try again')
             return;
         }
 
@@ -86,6 +88,7 @@ router.post('/login', async (req, res) => {
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
+        alert(err)
     }
 });
 
