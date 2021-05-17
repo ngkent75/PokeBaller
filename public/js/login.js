@@ -1,3 +1,28 @@
+function openModalLogin() {
+    document.getElementById("backdrop").style.display = "block"
+    document.getElementById("LoginModal").style.display = "block"
+    document.getElementById("LoginModal").classList.add("show")
+};
+
+function closeModalLogin() {
+    document.getElementById("backdrop").style.display = "none"
+    document.getElementById("LoginModal").style.display = "none"
+    document.getElementById("LoginModal").classList.remove("show")
+};
+
+function openModalSignup() {
+    document.getElementById("backdrop").style.display = "block"
+    document.getElementById("SignupModal").style.display = "block"
+    document.getElementById("SignupModal").classList.add("show")
+};
+
+function closeModalSignup() {
+    document.getElementById("backdrop").style.display = "none"
+    document.getElementById("SignupModal").style.display = "none"
+    document.getElementById("SignupModal").classList.remove("show")
+};
+
+
 // LOGIN function
 const loginHandler = async (event) => {
     event.preventDefault();
@@ -18,9 +43,7 @@ const loginHandler = async (event) => {
         } else {
             // alert("Sorry, incorrect username or password");
             // document.getElementById("LoginModal").modal("show");
-            document.getElementById("backdrop").style.display = "block"
-            document.getElementById("LoginModal").style.display = "block"
-            document.getElementById("LoginModal").classList.add("show")
+            openModalLogin();
         }
     }
 };
@@ -33,7 +56,6 @@ const signupFormHandler = async (event) => {
     const username = document.querySelector('#name-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
-    console.log(username, email, password);
     if (username && email && password) {
         const response = await fetch('/api/users', {
             method: 'POST',
@@ -44,16 +66,13 @@ const signupFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/');
         } else {
-            console.log(response.statusText);
+            // console.log(response.statusText);
+            openModalSignup()
         }
     }
 };
 
-function closeModal() {
-    document.getElementById("backdrop").style.display = "none"
-    document.getElementById("LoginModal").style.display = "none"
-    document.getElementById("LoginModal").classList.remove("show")
-};
+
 
 document.querySelector('.login-form').addEventListener('submit', loginHandler);
 document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);

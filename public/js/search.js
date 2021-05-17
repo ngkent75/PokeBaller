@@ -1,3 +1,27 @@
+function openModalAdd() {
+    document.getElementById("backdrop").style.display = "block"
+    document.getElementById("AddModal").style.display = "block"
+    document.getElementById("AddModal").classList.add("show")
+};
+
+function closeModalAdd() {
+    document.getElementById("backdrop").style.display = "none"
+    document.getElementById("AddModal").style.display = "none"
+    document.getElementById("AddModal").classList.remove("show")
+};
+
+function openModalError() {
+    document.getElementById("backdrop").style.display = "block"
+    document.getElementById("ErrorModal").style.display = "block"
+    document.getElementById("ErrorModal").classList.add("show")
+};
+
+function closeModalError() {
+    document.getElementById("backdrop").style.display = "none"
+    document.getElementById("ErrorModal").style.display = "none"
+    document.getElementById("ErrorModal").classList.remove("show")
+};
+
 // searches based on value in form
 const searchTerm = (event) => {
     event.preventDefault();
@@ -7,10 +31,6 @@ const searchTerm = (event) => {
 
 //seeds data and adds to collection
 const add = async (id, name, rarity, images) => {
-    console.log(id);
-    console.log(name);
-    console.log(rarity);
-    console.log(images);
     // posts to local database
     const response = await fetch(`/api/pokeRoutes`, {
         method: 'POST',
@@ -19,7 +39,6 @@ const add = async (id, name, rarity, images) => {
             'Content-Type': 'application/json'
         }
     });
-    console.log(id);
     //posts collection 
     const data = { pokemon_id: id };
     const userResponse = await fetch(`/api/pokeUserRoutes`, {
@@ -29,7 +48,11 @@ const add = async (id, name, rarity, images) => {
             'Content-Type': 'application/json'
         }
     })
-
+    if (userResponse.ok) {
+        openModalAdd();
+    } else {
+        openModalError();
+    }
 };
 
 
