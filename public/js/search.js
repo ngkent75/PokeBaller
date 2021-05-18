@@ -55,6 +55,31 @@ const add = async (id, name, rarity, images) => {
     }
 };
 
+//seeds data and adds to collection
+const addWishlist = async (id, name, rarity, images) => {
+    // posts to local database (organically seeding)
+    const response = await fetch(`/api/pokeRoutes`, {
+        method: 'POST',
+        body: JSON.stringify({ id, name, rarity, images }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+    //posts collection 
+    const data = { pokemon_id: id };
+    const userResponse = await fetch(`/api/pokeUserRoutes`, { //change to UserWishlist
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    if (userResponse.ok) {
+        openModalAdd();
+    } else {
+        openModalError();
+    }
+};
 
 // listens for onclick for each card
 
