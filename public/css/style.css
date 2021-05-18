@@ -246,3 +246,12 @@ input {
   /* color: #C53A83; */
   color: #83A00A;
 }
+
+.modalColor {
+    background-color: red;
+}
+
+.modalFont {
+    color: red;
+    font-weight: bold;
+}

@@ -29,15 +29,15 @@
       <div class="form-group">
         <label for="name-signup">Name:</label>
       </div>
-      <input class="form-input" type="text" id="name-signup" />
+      <input class="form-input" type="text" id="name-signup" placeholder="Ash Ketchum" />
       <div class="form-group">
         <label for="email-signup">Email:</label>
       </div>
-      <input class="form-input" type="text" id="email-signup" />
+      <input class="form-input" type="text" id="email-signup" placeholder="gottacatchem@all.com" />
       <div class="form-group">
-        <label for="password-signup">Password:</label>
+        <label for="password-signup">Password:  (8 Characters)</label>
       </div>
-      <input class="form-input" type="password" id="password-signup" />
+      <input class="form-input" type="password" id="password-signup" placeholder="pika1234" />
       <div class="form-group">
         <button class="btn btn-primary" type="submit">SIGNUP</button>
       </div>
@@ -51,10 +51,10 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="LoginModalLabel">Invalid Login!</h5>
+        <h5 class="modal-title modalFont" id="LoginModalLabel">Invalid Login!</h5>
         {{!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> --}}
       </div>
-      <div class="modal-body">
+      <div class="modal-body" style='font-weight: bold;'>
         Sorry, you entered the wrong email or password. Please, try again.
       </div>
       <div class="modal-footer">
@@ -70,10 +70,10 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="SignupModalLabel">Invalid Signup!</h5>
+        <h5 class="modal-title modalFont" id="SignupModalLabel">Invalid Signup!</h5>
         {{!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> --}}
       </div>
-      <div class="modal-body">
+      <div class="modal-body" style='font-weight: bold;'>
         Sorry, you entered invalid signup information. Please, try again.
       </div>
       <div class="modal-footer">
