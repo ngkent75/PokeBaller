@@ -4,6 +4,8 @@ const sequelize = require('../config/connection');
 
 class PokemonUserWishlist extends Model { }
 
+// TODO future development - bring back referential integrity
+
 PokemonUserWishlist.init(
     {
         id: {
@@ -13,18 +15,20 @@ PokemonUserWishlist.init(
             autoIncrement: true,
         },
         user_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'user',
-                key: 'id',
-            },
+            type: DataTypes.INTEGER
+            // ,
+            // references: {
+            //     model: 'user',
+            //     key: 'id',
+            // },
         },
         pokemon_id: {
-            type: DataTypes.STRING,
-            references: {
-                model: 'pokemon',
-                key: 'id',
-            },
+            type: DataTypes.STRING
+            // ,
+            // references: {
+            //     model: 'pokemon',
+            //     key: 'id',
+            // },
         },
     },
     {
@@ -35,7 +39,6 @@ PokemonUserWishlist.init(
         modelName: 'pokemon_user_wishlist',
     }
 );
-
 
 
 module.exports = PokemonUserWishlist;
