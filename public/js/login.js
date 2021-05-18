@@ -41,8 +41,6 @@ const loginHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/');
         } else {
-            // alert("Sorry, incorrect username or password");
-            // document.getElementById("LoginModal").modal("show");
             openModalLogin();
         }
     }
@@ -66,7 +64,6 @@ const signupFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/');
         } else {
-            // console.log(response.statusText);
             openModalSignup()
         }
     }

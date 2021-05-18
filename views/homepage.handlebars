@@ -53,4 +53,41 @@
 
 </div>
 
+<!-- Add Modal -->
+<div class="modal fade" id="AddModal" tabindex="-1" aria-labelledby="AddModalLabel" aria-hidden="true" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            </div>
+            <div class="modal-body modalFont">
+                Card has been added to your collection!
+            </div>
+            <div class="modal-footer">
+                <button onclick="closeModalAdd()" type="button" class="btn btn-primary"
+                    data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Error Modal -->
+<div class="modal fade" id="ErrorModal" tabindex="-1" aria-labelledby="ErrorModalLabel" aria-hidden="true"
+    role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            </div>
+            <div class="modal-body modalFont">
+                This card is already in your collection.
+            </div>
+            <div class="modal-footer">
+                <button onclick="closeModalError()" type="button" class="btn btn-primary"
+                    data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-backdrop fade show" id="backdrop" style="display: none;"></div>
+
 <script src="/js/home.js"></script>

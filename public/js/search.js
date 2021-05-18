@@ -1,3 +1,5 @@
+// functions for modal operation
+
 function openModalAdd() {
     document.getElementById("backdrop").style.display = "block"
     document.getElementById("AddModal").style.display = "block"
