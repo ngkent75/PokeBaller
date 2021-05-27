@@ -60,10 +60,10 @@ const add = async (id, name, rarity, images) => {
 
 // listens for onclick for each card
 
-document.querySelector('.card-table').addEventListener('click', function (e) {
-    if (e.target.classList.contains('card')) {
-        add(e)
-    }
-});
+// document.querySelector('.card-table').addEventListener('click', function (e) {
+//     if (e.target.classList.contains('card')) {
+//         add(e)
+//     }
+// });
 // listen for form submit to search
 document.querySelector('#add-form').addEventListener('submit', searchTerm);
