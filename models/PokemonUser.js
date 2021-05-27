@@ -29,6 +29,7 @@ PokemonUser.init(
         list: {
             type: DataTypes.STRING,
             allowNull: false,
+            defaultValue:'collection',
         },
     },
     {

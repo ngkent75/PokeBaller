@@ -20,6 +20,7 @@ router.get('/', async (req, res) => {
 
 // ADD ASSOCIATION
 router.post('/', async (req, res) => {
+    console.log(req.body);
     const { user_id } = req.session;
     const { pokemon_id } = req.body;
     try {
