@@ -53,9 +53,6 @@
 
     }
     .container {
-        /* display: flex;
-        flex-direction: column;
-        justify-content: center; */
         width: 100%;
     }
 } */
@@ -211,10 +208,6 @@ body {
     margin-bottom: 20%;
 }
 
-/* .sample-search {
-    width: 320px;
-} */
-
 .search {
     /* position: relative; */
     bottom: 20px;
@@ -249,8 +242,6 @@ input {
 }
 
 .btn-outline-secondary {
-  /* background-color: #83A00A; */
-  /* color: #C53A83; */
   color: #83A00A;
 }
 
