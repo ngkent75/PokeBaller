@@ -12,10 +12,6 @@ PokemonUser.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        // list: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false,
-        // },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
@@ -29,6 +25,10 @@ PokemonUser.init(
                 model: 'pokemon',
                 key: 'id',
             },
+        },
+        list: {
+            type: DataTypes.STRING,
+            allowNull: false,
         },
     },
     {
