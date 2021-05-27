@@ -14,6 +14,7 @@ const seedDatabase = async () => {
   
   await seedPokemonUser();
 
+
   await seedPokemonUserWishlists();
 
   process.exit(0);

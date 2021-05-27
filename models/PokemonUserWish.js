@@ -2,9 +2,9 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection');
 
-class PokemonUser extends Model { }
+class PokemonUserWish extends Model { }
 
-PokemonUser.init(
+PokemonUserWish.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -12,10 +12,6 @@ PokemonUser.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        // list: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false,
-        // },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
@@ -42,4 +38,4 @@ PokemonUser.init(
 
 
 
-module.exports = PokemonUser;
+module.exports = PokemonUserWish;
