@@ -6,13 +6,13 @@
 }
 
 /* MEDIA QUERIES ****************************************/
-@media only screen and (min-width : 320px) and (max-width : 600px) {
+@media only screen and (max-width : 600px) {
     .card {
         width: 75%;
     }
-    /* .logo {
-        width: 45%;
-    } */
+    .logo {
+        width: 100%;
+    }
     .logocontainer {
         width: 100%;
     }
