@@ -1,93 +1,68 @@
-# PokeBaller
+<br/>
+<p align="center">
+  <a href="https://github.com/CodeWarrior-debug/PokeBaller">
+    <img src="https://github.com/CodeWarrior-debug/PokeBaller/blob/main/public/images/pokeball.png?raw=true" alt="Logo" width="80" height="80">
+  </a>
 
-## Table of Contents
----
-* [Description](#description)  | [Links](#links) | [Usage](#usage) | [Demo](#demo) | [Preview](#preview) |[Installation](#installation) | [Tests](#tests) | [Contributing](#contributing) | [Questions](#questions) | [Sources-Tech](#sources-tech) | [License](#license)
+  <h3 align="center">PokeBaller: Gotta Collect 'Em All!</h3>
 
-## Description
----
-Want to digitally track your Pokemon trading cards? Pokeballer is the app for you! This heroku app loads Pokemon TCG data and images where users can add their cards to a digital collection and view all the available cards for each pokemon.
+  <p align="center">
+    <a href="https://github.com/CodeWarrior-debug/PokeBaller"><strong>Explore the docs »</strong></a>
+    <br/>
+    <br/>
+  </p>
+</p>
 
-## Links
----
-Deployed Application: https://evening-oasis-15758.herokuapp.com/
-Github Repo: https://github.com/ngkent75/PokeBaller
+![Contributors](https://img.shields.io/github/contributors/CodeWarrior-debug/PokeBaller?color=dark-green) ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-## Usage
----
-Use PokeBaller as a digital space where you don’t have to filter through physical cards to see what's in your collection. It’s a tool that lets you have your card collection on any device.
+## Table Of Contents
+[About the Project](#about-the-project) | [Built With](#built-with) | [Getting Started](#getting-started) | [Context](#context)| [Authors](#authors) | [Acknowledgements](#acknowledgements) | [License](#license)
 
-See a full slideshow presentation for context on this project at https://docs.google.com/presentation/d/1KbDNIhyXNIpK5oZnzSKNHNqseoR5SB3wPzDyNt7kMuY
+## About The Project
+![Screen Shot](https://github.com/CodeWarrior-debug/PokeBaller/blob/main/public/images/Pokeballer_Rep_Pic.png?raw=true)
 
-AS A Pokemon card collector,
-I WANT to have a digital tool to identify what Pokemon cards I have and do not have & their properties, 
-SO THAT I can organize my plans for buying and trading to get new cards.
+Want to digitally track your Pokemon trading cards? Then Pokeballer is the app for you! Loading Pokemon TCG data and images, Pokeballer lets users add their cards to a digital collection & view all the available cards for each Pokemon. Have your Pokemon trading card collection on any device with PokeBaller!
 
-## Demo
----
-![Demo](https://github.com/ngkent75/PokeBaller/blob/main/public/images/PokeBaller%20Demo.gif?raw=true)
+To access the deployed site, go to https://pokeballer.herokuapp.com
 
-## Preview
----
-![Preview-Login](https://github.com/ngkent75/PokeBaller/blob/main/public/images/pokeballerlogin.png?raw=true)
+## Built With
 
-## Installation
----
-NONE.
+* [Express](https://expressjs.com/)
+* [Handlebars](https://handlebarsjs.com/)
+* [sequelize](https://sequelize.org/)
+* [pokemontcgsdk](https://pokemontcg.io/)
+* [Node](https://nodejs.org/en/)
+* [Bootstrap](https://getbootstrap.com/)
 
-## Tests
----
-NONE.
+## Context
 
-## Contributing
----
-Dylan Jacob, Sommer Moya-Mendez, Nathan Kent, James Jordan, Nicholas Marrone
+Originally built as a project for a Trilogy Education Services full-stack web development bootcamp, PokeBaller has been refined and shows a grasp of Model-View-Controller concepts, Handlebars implementation, and front-end design with Bootstrap.
 
-For future development ideas, take a look at the presentation mentioned in the Usage section. 
+Here is the [powerpoint](https://docs.google.com/presentation/d/1KbDNIhyXNIpK5oZnzSKNHNqseoR5SB3wPzDyNt7kMuY/edit#slide=id.p) explaining the original project.
 
-## Questions
----
-https://github.com/ngkent75
+## Getting Started
 
-  ## Sources-Tech
----
-Trilogy Education Services, especially instructors Anthony C. and Max A. for their great guidance and troubleshooting
+To get a local copy up and running - follow steps below! 
 
-* Pokemon API/NPM - https://docs.pokemontcg.io/
-* Pokeball Image - https://pixabay.com/illustrations/pokeball-pokemon-game-ball-1594373/
-* Express - https://expressjs.com/
-* Handlebars - https://handlebarsjs.com/
-* Sequelize - https://sequelize.org/master/
-* Express-Session - https://www.npmjs.com/package/connect-session-sequelize
-* Bcrypt - https://www.npmjs.com/package/bcrypt	
-* dotenv - https://www.npmjs.com/package/dotenv	
-* lodash.shuffle - https://www.npmjs.com/package/lodash.shuffle	
-* Pokemon fonts - https://www.onlinewebfonts.com/download/f4d1593471d222ddebd973210265762a	
-* Hind font - https://fonts.google.com/specimen/Hind?preview.text_type=custom	
+After cloning into your IDE and changing directory into the Pokeballer folder:
 
-## License
----
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)(https://opensource.org/licenses/MIT)
+1) Rename the .env copy file to just .env
+2) Go to the Pokemon Trading Card docs, get an API key & paste into .env.
+3) Run "npm i" in your terminal to install dependencies.
+4) Make sure mySQL is connected on your computer, then run the schema script (using plugin/Workbench).
+5) In terminal, "npm run seed" to seed the database.
+6) In terminal, "npm start" to begin a server.
+7) The terminal will show a web address where the website is now running! Navigate there with CTRL + click and try out Pokeballer!
 
-MIT License
+## Authors
 
-Copyright (c) [year] [fullname]
+* [James Jordan](https://github.com/CodeWarrior-debug) - *Back-End & Sequelize*
+* [Nicholas Marrone](https://github.com/NicholasMarrone-1997) - *Front-End & Original models*
+* [Nathan Kent](https://github.com/ngkent75) - *GitHub Repository Manager & Back-End*
+* [Dylan Jacobs](https://github.com/dylanjacobb) - *Front-End & Routes*
+* [Sommer Moya-Mendes](https://github.com/smoyamendez) - *Front-End & Artwork*
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+## Acknowledgements
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
+* [ShaanCoding](https://github.com/ShaanCoding/)
+* Trilogy Education Services
